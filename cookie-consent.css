@@ -1,0 +1,185 @@
+/*
+   Cookie Consent Banner – Industrial Heritage (Hell)
+   Marineblau / Orange / Off-White
+*/
+
+.cc-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: ccFadeIn 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.cc-banner {
+  background: #ffffff;
+  border: 1px solid #dcd9d3;
+  max-width: 540px;
+  width: 100%;
+  padding: 2rem;
+  animation: ccSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+}
+
+.cc-banner__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0d2137;
+  margin-bottom: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.cc-banner__text {
+  font-size: 0.85rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.cc-banner__text a {
+  color: #f3580a;
+  text-decoration: underline;
+}
+
+.cc-banner__options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #faf8f5;
+  border: 1px solid #eae7e2;
+}
+
+.cc-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+  color: #374151;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.cc-option__toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.cc-option__toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.cc-option__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #dcd9d3;
+  border-radius: 24px;
+  transition: background 0.2s;
+}
+
+.cc-option__slider::before {
+  content: '';
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+.cc-option__toggle input:checked + .cc-option__slider {
+  background: #f3580a;
+}
+
+.cc-option__toggle input:checked + .cc-option__slider::before {
+  transform: translateX(20px);
+}
+
+.cc-option__toggle input:disabled + .cc-option__slider {
+  background: #16a34a;
+  opacity: 0.5;
+  cursor: default;
+}
+
+.cc-option__label {
+  font-weight: 500;
+  color: #0d2137;
+}
+
+.cc-option__desc {
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+.cc-banner__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.cc-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  transition: all 0.15s;
+}
+
+.cc-btn--accept {
+  background: #f3580a;
+  color: #fff;
+}
+.cc-btn--accept:hover {
+  background: #d4440a;
+}
+
+.cc-btn--save {
+  background: transparent;
+  color: #374151;
+  border: 1px solid #dcd9d3;
+}
+.cc-btn--save:hover {
+  background: #f3f1ed;
+  color: #0d2137;
+  border-color: #b0ada8;
+}
+
+.cc-btn--essential {
+  background: none;
+  color: #6b7280;
+  text-decoration: underline;
+  padding: 0.5rem 0;
+}
+
+@keyframes ccFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes ccSlideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 500px) {
+  .cc-overlay { padding: 0.75rem; }
+  .cc-banner { padding: 1.25rem; }
+  .cc-banner__actions { flex-direction: column; }
+  .cc-btn { width: 100%; text-align: center; }
+}

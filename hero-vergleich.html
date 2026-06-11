@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero-Vergleich</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #1a1a1a; color: #fff; padding: 2rem; }
+    h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; color: #fff; }
+    .sub { text-align: center; color: #999; margin-bottom: 2.5rem; font-size: 0.95rem; }
+    .comparison { display: flex; flex-direction: column; gap: 1.5rem; max-width: 1400px; margin: 0 auto; }
+    .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+    .option { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
+    .option-header { background: #2a2a2a; color: #fff; padding: 0.7rem 1rem; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+    .option-header .tag { font-size: 0.7rem; background: #444; padding: 0.2rem 0.6rem; border-radius: 4px; color: #aaa; }
+    .option-body { padding: 0; }
+    .labels { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; max-width: 1400px; margin: 1rem auto 0; text-align: center; }
+    .labels div { padding: 0.5rem; font-size: 0.82rem; color: #ccc; line-height: 1.5; }
+    @media (max-width: 900px) { .row { grid-template-columns: 1fr; } .labels { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <h1>Hero-Vergleich: Drei Optionen</h1>
+  <p class="sub">LKW EXPRESS 24 — Industrial Heritage Design</p>
+
+  <div class="comparison">
+    <div class="row">
+      <!-- Option A: Grosser skalieren -->
+      <div class="option">
+        <div class="option-header">
+          <span>A — Groesser skalieren</span>
+          <span class="tag">mehr Wucht, gleiche Struktur</span>
+        </div>
+        <div class="option-body">
+          <div style="background:linear-gradient(180deg,#fefdfb 0%,#faf8f5 100%);padding:clamp(3rem,8vw,6rem) 2rem clamp(2rem,4vw,3rem);min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;font-family:system-ui,sans-serif;border-bottom:1px solid #dcd9d3;">
+            <div style="position:absolute;top:-20%;right:-10%;width:clamp(400px,50vw,700px);height:clamp(400px,50vw,700px);border-radius:50%;background:radial-gradient(circle,rgba(245,166,35,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+            <div style="position:absolute;bottom:10%;left:-5%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(13,33,55,0.04) 0%,transparent 70%);pointer-events:none;"></div>
+            <div style="text-align:center;max-width:780px;position:relative;z-index:1;">
+              <div style="display:inline-flex;align-items:center;gap:0.6rem;background:rgba(243,88,10,0.10);border:1px solid rgba(243,88,10,0.2);padding:0.6rem 1.6rem;font-size:0.9rem;font-weight:500;color:#d4440a;margin-bottom:2.5rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                Mehr als 25 Jahre Erfahrung - ueber 1.000 Fahrzeuge angekauft!
+              </div>
+              <div style="font-family:Impact,fantasy;font-size:clamp(3rem,7vw,5.2rem);font-weight:400;line-height:0.9;color:#0d2137;margin-bottom:1.25rem;letter-spacing:0.01em;">
+                LKW, Transporter &amp; Baumaschinen verkaufen -<br>
+                <span style="color:#f3580a;">fair, schnell, unkompliziert.</span>
+              </div>
+              <p style="font-size:clamp(1rem,1.6vw,1.2rem);color:#6b7280;max-width:620px;margin:0 auto 2rem;line-height:1.7;">
+                Auch abgeschrieben, defekt oder ohne TUEV. Wir machen Ihnen ein faires Angebot - innerhalb von 24 Stunden. Kostenlose Besichtigung deutschlandweit.
+              </p>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:0.6rem;margin-bottom:2.5rem;">
+                <a href="#" style="display:inline-block;background:#f3580a;color:#fff;padding:1rem 2.5rem;font-size:1rem;font-weight:600;text-decoration:none;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);">Fahrzeug jetzt bewerten lassen</a>
+                <span style="font-size:0.78rem;color:#6b7280;">Kostenlos &amp; unverbindlich - in unter 2 Minuten erledigt</span>
+              </div>
+              <div style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;font-size:0.82rem;color:#6b7280;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;">
+                <span style="display:flex;align-items:center;gap:0.4rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Ueber 1.000 Fahrzeuge angekauft</span>
+                <span style="display:flex;align-items:center;gap:0.4rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Familiengefuehrt</span>
+                <span style="display:flex;align-items:center;gap:0.4rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Sofortzahlung</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option B: Visuelle Wucht -->
+      <div class="option">
+        <div class="option-header">
+          <span>B — Visuelle Wucht</span>
+          <span class="tag">Raster + staerkere Orbs + Truck-SVG</span>
+        </div>
+        <div class="option-body">
+          <div style="background:linear-gradient(180deg,#fefdfb 0%,#faf8f5 100%);padding:clamp(3rem,8vw,6rem) 2rem clamp(2rem,4vw,3rem);min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;font-family:system-ui,sans-serif;border-bottom:1px solid #dcd9d3;">
+            <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(13,33,55,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(13,33,55,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;"></div>
+            <div style="position:absolute;top:-15%;right:-5%;width:clamp(500px,60vw,800px);height:clamp(500px,60vw,800px);border-radius:50%;background:radial-gradient(circle,rgba(245,166,35,0.1) 0%,rgba(243,88,10,0.03) 40%,transparent 70%);pointer-events:none;"></div>
+            <div style="position:absolute;bottom:-5%;left:-8%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(13,33,55,0.05) 0%,transparent 70%);pointer-events:none;"></div>
+            <svg style="position:absolute;bottom:5%;right:3%;opacity:0.04;width:300px;height:auto;pointer-events:none;" viewBox="0 0 24 24" fill="#0d2137"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+            <div style="text-align:center;max-width:720px;position:relative;z-index:1;">
+              <div style="display:inline-flex;align-items:center;gap:0.6rem;background:#0d2137;padding:0.5rem 1.6rem;font-size:0.85rem;font-weight:500;color:#f5a623;margin-bottom:2.5rem;letter-spacing:0.03em;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                Mehr als 25 Jahre Erfahrung - ueber 1.000 Fahrzeuge angekauft!
+              </div>
+              <div style="font-family:Impact,fantasy;font-size:clamp(2.6rem,5.8vw,4.5rem);font-weight:400;line-height:0.9;color:#0d2137;margin-bottom:1.25rem;">
+                LKW, Transporter &amp; Baumaschinen verkaufen -<br>
+                <span style="color:#f3580a;">fair, schnell, unkompliziert.</span>
+              </div>
+              <p style="font-size:clamp(0.95rem,1.5vw,1.1rem);color:#6b7280;max-width:560px;margin:0 auto 2rem;line-height:1.7;">
+                Auch abgeschrieben, defekt oder ohne TUEV. Wir machen Ihnen ein faires Angebot - innerhalb von 24 Stunden. Kostenlose Besichtigung deutschlandweit.
+              </p>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:0.6rem;margin-bottom:2.5rem;">
+                <a href="#" style="display:inline-block;background:#f3580a;color:#fff;padding:1rem 2.5rem;font-size:1rem;font-weight:600;text-decoration:none;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);">Fahrzeug jetzt bewerten lassen</a>
+                <span style="font-size:0.78rem;color:#6b7280;font-family:monospace;">Kostenlos &amp; unverbindlich - in unter 2 Minuten erledigt</span>
+              </div>
+              <div style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;font-size:0.82rem;color:#6b7280;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;">
+                <span style="display:flex;align-items:center;gap:0.4rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Ueber 1.000 Fahrzeuge angekauft</span>
+                <span style="display:flex;align-items:center;gap:0.4rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Familiengefuehrt</span>
+                <span style="display:flex;align-items:center;gap:0.4rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Sofortzahlung</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option C: Industrial Edge -->
+      <div class="option">
+        <div class="option-header">
+          <span>C — Industrial Edge</span>
+          <span class="tag">Hazard-Stripe + Safety-Orange Akzente</span>
+        </div>
+        <div class="option-body">
+          <div style="background:linear-gradient(180deg,#fefdfb 0%,#faf8f5 100%);padding:clamp(3rem,8vw,6rem) 2rem clamp(2rem,4vw,3rem);min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;font-family:system-ui,sans-serif;border-bottom:3px solid #f3580a;">
+            <div style="position:absolute;bottom:0;left:0;right:0;height:6px;background:repeating-linear-gradient(90deg,#f5a623 0px,#f5a623 20px,#0d2137 20px,#0d2137 40px);"></div>
+            <div style="position:absolute;top:0;right:0;width:80px;height:80px;border-right:3px solid #f5a623;border-top:3px solid #f5a623;opacity:0.4;"></div>
+            <div style="position:absolute;top:-20%;right:-5%;width:clamp(400px,50vw,700px);height:clamp(400px,50vw,700px);border-radius:50%;background:radial-gradient(circle,rgba(243,88,10,0.07) 0%,transparent 70%);pointer-events:none;"></div>
+            <div style="position:absolute;bottom:10%;left:-5%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(13,33,55,0.03) 0%,transparent 70%);pointer-events:none;"></div>
+            <div style="text-align:center;max-width:720px;position:relative;z-index:1;">
+              <div style="display:inline-flex;align-items:center;gap:0.6rem;background:#f3580a;padding:0.5rem 1.6rem;font-size:0.85rem;font-weight:600;color:#fff;margin-bottom:2.5rem;letter-spacing:0.02em;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                Mehr als 25 Jahre Erfahrung - ueber 1.000 Fahrzeuge angekauft!
+              </div>
+              <div style="font-family:Impact,fantasy;font-size:clamp(2.6rem,5.8vw,4.5rem);font-weight:400;line-height:0.88;color:#0d2137;margin-bottom:1rem;letter-spacing:0.02em;">
+                LKW, Transporter &amp; Baumaschinen verkaufen -<br>
+                <span style="color:#f3580a;">fair, schnell, unkompliziert.</span>
+              </div>
+              <p style="font-size:clamp(0.95rem,1.5vw,1.1rem);color:#6b7280;max-width:560px;margin:0 auto 1.5rem;line-height:1.7;">
+                Auch abgeschrieben, defekt oder ohne TUEV. Wir machen Ihnen ein faires Angebot - innerhalb von 24 Stunden.
+              </p>
+              <div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;">
+                <span style="display:flex;align-items:center;gap:0.4rem;font-size:0.82rem;font-weight:600;color:#0d2137;background:rgba(243,88,10,0.06);padding:0.4rem 1rem;border-left:3px solid #f3580a;">Besichtigung vor Ort</span>
+                <span style="display:flex;align-items:center;gap:0.4rem;font-size:0.82rem;font-weight:600;color:#0d2137;background:rgba(243,88,10,0.06);padding:0.4rem 1rem;border-left:3px solid #f3580a;">Angebot in 24h</span>
+                <span style="display:flex;align-items:center;gap:0.4rem;font-size:0.82rem;font-weight:600;color:#0d2137;background:rgba(243,88,10,0.06);padding:0.4rem 1rem;border-left:3px solid #f3580a;">Sofortzahlung</span>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:0.6rem;margin-bottom:2rem;">
+                <a href="#" style="display:inline-block;background:#0d2137;color:#fff;padding:1rem 2.5rem;font-size:1rem;font-weight:600;text-decoration:none;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);">Fahrzeug jetzt bewerten lassen</a>
+                <span style="font-size:0.78rem;color:#6b7280;font-family:monospace;">Kostenlos &amp; unverbindlich - in unter 2 Minuten erledigt</span>
+              </div>
+              <div style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;font-size:0.82rem;color:#6b7280;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;">
+                <span style="display:flex;align-items:center;gap:0.4rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Ueber 1.000 Fahrzeuge angekauft</span>
+                <span style="display:flex;align-items:center;gap:0.4rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Familiengefuehrt</span>
+                <span style="display:flex;align-items:center;gap:0.4rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Sofortzahlung</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="labels">
+      <div><strong>A — Groesser skalieren:</strong> Titel von 2.4-4.2rem auf 3-5.2rem, Subline vergroessert, Badge in Safety-Orange, mehr Weissraum</div>
+      <div><strong>B — Visuelle Wucht:</strong> Geometrisches 80px-Raster im Hintergrund, grosser Truck-Schatten (3% opacity), verstaerkte Orange-Amber-Orbs, Navy-Badge</div>
+      <div><strong>C — Industrial Edge:</strong> Hazard-Warnstreifen am unteren Rand, Safety-Orange Badge mit Clip-Path, 3 Feature-Badges (Besichtigung/24h/Sofort), Akzent-Ecke oben rechts, Navy-Button</div>
+    </div>
+  </div>
+
+  <p style="text-align:center;margin-top:2rem;color:#666;font-size:0.8rem;">LKW EXPRESS 24 — Industrial Heritage — Hero-Vergleich</p>
+</body>
+</html>
