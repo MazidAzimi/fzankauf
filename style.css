@@ -10,7 +10,7 @@
   --bg: #faf8f5;             /* Warmes Off-White (Seitenhintergrund) */
   --heading: #0d2137;         /* Marine-Dunkelblau (Überschriften) */
   --body: #374151;            /* Dunkelgrau (Fließtext) */
-  --body-muted: #6b7280;      /* Gedämpft (Metatext, Labels) */
+  --body-muted: #5b626e;      /* Gedämpft (Metatext, Labels) – erhöhter Kontrast */
   --surface: #ffffff;         /* Reinweiß (Karten, Formular) */
   --surface-alt: #f3f1ed;    /* Leicht getönt (Sektionen, FAQ-Items) */
   --surface-hover: #e8e5df;   /* Hover auf getönten Flächen */
@@ -1078,11 +1078,11 @@ h1, h2, h3, h4, .section-title, .hero__title {
   padding: 4rem 0 2rem;
   background: var(--ink);
   border-top: 1px solid rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.70);
+  color: rgba(255,255,255,0.75);
 }
 
 .footer a {
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.65);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -1100,7 +1100,7 @@ h1, h2, h3, h4, .section-title, .hero__title {
 .footer__brand p {
   margin-top: 0.75rem;
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.65);
   max-width: 340px;
   line-height: 1.6;
 }
@@ -1125,13 +1125,13 @@ h1, h2, h3, h4, .section-title, .hero__title {
   border-top: 1px solid rgba(255,255,255,0.08);
   padding-top: 1.5rem;
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.40);
+  color: rgba(255,255,255,0.55);
 }
 
 .footer__tagline {
   margin-top: 0.4rem;
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.30);
+  color: rgba(255,255,255,0.40);
   font-style: italic;
 }
 
