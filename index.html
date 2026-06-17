@@ -4,11 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="LKW, Transporter oder Baumaschine verkaufen? Faires Angebot in 24h – auch defekt & ohne TÜV. Kostenlose Besichtigung vor Ort, Sofortzahlung, kein Papierkram.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0d2137">
+
+  <!-- Favicon / App-Icon -->
+  <link rel="icon" type="image/png" href="assets/logos/fzankauf-icon.png">
+  <link rel="apple-touch-icon" href="assets/logos/fzankauf-icon.png">
 
   <!-- Open Graph (für Social/WhatsApp/Ads) -->
   <meta property="og:title" content="Nutzfahrzeug verkaufen – fair, schnell, unkompliziert | fzankauf.de">
   <meta property="og:description" content="Ihr LKW, Transporter oder Ihre Baumaschine verkaufen – ohne Stress, ohne Verhandeln. Angebot in 24h. Kostenlose Besichtigung. Sofortzahlung.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fzankauf.de/">
+  <meta property="og:site_name" content="fzankauf.de">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:image" content="https://fzankauf.de/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FZAnkauf – LKW, Transporter & Baumaschinen verkaufen. Angebot in 24 Stunden.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://fzankauf.de/og-image.jpg">
+  <link rel="canonical" href="https://fzankauf.de/">
 
   <title>Nutzfahrzeug verkaufen – fair, schnell, unkompliziert | fzankauf.de</title>
 
@@ -20,13 +37,98 @@
   <link rel="stylesheet" href="cookie-consent.css">
   <link rel="stylesheet" href="style.css">
   <!-- Google Fonts werden erst nach Consent geladen (siehe cookie-consent.js) -->
+
+  <!-- ===== Structured Data (JSON-LD) für Google Rich Results & KI-Suche ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AutoDealer",
+        "@id": "https://fzankauf.de/#business",
+        "name": "fzankauf.de – Euro-Truck-Handel GmbH",
+        "legalName": "Euro-Truck-Handel GmbH",
+        "description": "Familienunternehmen für den fairen Ankauf von Nutzfahrzeugen: LKW, Transporter, Anhänger, Baumaschinen, Gabelstapler und Landmaschinen – auch defekt, abgemeldet oder ohne TÜV. Bundesweite Besichtigung vor Ort, Angebot in 24 Stunden, Sofortzahlung.",
+        "url": "https://fzankauf.de/",
+        "image": "https://fzankauf.de/og-image.jpg",
+        "logo": "https://fzankauf.de/assets/logos/fzankauf-icon.png",
+        "telephone": "+4915510117300",
+        "foundingDate": "1998",
+        "priceRange": "€€",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Emil-Berliner-Str. 29",
+          "postalCode": "30851",
+          "addressLocality": "Langenhagen",
+          "addressRegion": "Niedersachsen",
+          "addressCountry": "DE"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+4915510117300",
+          "contactType": "sales",
+          "areaServed": ["DE", "AT", "CH"],
+          "availableLanguage": ["de"]
+        },
+        "areaServed": [
+          { "@type": "Country", "name": "Deutschland" },
+          { "@type": "Country", "name": "Österreich" },
+          { "@type": "Country", "name": "Schweiz" }
+        ],
+        "knowsAbout": ["LKW-Ankauf", "Transporter-Ankauf", "Baumaschinen-Ankauf", "Gabelstapler-Ankauf", "Landmaschinen-Ankauf", "Nutzfahrzeug-Ankauf"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://fzankauf.de/#website",
+        "url": "https://fzankauf.de/",
+        "name": "fzankauf.de",
+        "inLanguage": "de-DE",
+        "publisher": { "@id": "https://fzankauf.de/#business" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://fzankauf.de/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wie läuft der Verkauf genau ab?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Der Ablauf ist unkompliziert: (1) Sie senden uns ein paar Handyfotos und Eckdaten zu Ihrem Fahrzeug über das Formular. (2) Wir prüfen die Unterlagen und senden Ihnen innerhalb von 24 Stunden ein verbindliches Angebot per E-Mail. (3) Wenn das Angebot passt, vereinbaren wir einen Termin. Wir kommen vorbei, begutachten das Fahrzeug und besprechen alles weitere. Wenn alles stimmt, wird der Kaufvertrag direkt vor Ort unterschrieben." }
+          },
+          {
+            "@type": "Question",
+            "name": "Welche Fahrzeuge kaufen Sie an?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Wir kaufen im Prinzip alle Fahrzeugtypen an – ob LKW, Transporter, Anhänger, Baumaschinen, Gabelstapler oder Landmaschinen. Auch defekte, abgemeldete oder unfallbeschädigte Fahrzeuge – ganz gleich. Wenn es Räder oder Ketten hat, machen wir ein Angebot. Sollten Sie unsicher sein: Einfach anfragen, wir prüfen das." }
+          },
+          {
+            "@type": "Question",
+            "name": "Bekomme ich wirklich den genannten Preis?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ja. Der Preis, den Sie per E-Mail erhalten, ist verbindlich – vorausgesetzt, Ihre Angaben zu Fahrzeugtyp, Zustand und Ausstattung stimmen mit der Realität überein. Sollten vor Ort größere Abweichungen festgestellt werden (z. B. ein nicht angegebener Motorschaden), behalten wir uns eine Anpassung vor. Solange alles stimmt, gilt der genannte Preis. Kein Nachverhandeln, keine versteckten Abzüge." }
+          },
+          {
+            "@type": "Question",
+            "name": "Fallen Gebühren an? Was kostet der Service?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Nein, der gesamte Service ist für Sie kostenlos. Die Online-Bewertung ist völlig unverbindlich und kostenfrei. Auch die Abholung, die Abmeldung und die Abwicklung des Papierkrams sind für Sie kostenfrei. Es fallen keinerlei Gebühren an – auch nicht, wenn Sie sich gegen einen Verkauf entscheiden." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann ich auch defekte oder abgeschriebene Fahrzeuge verkaufen?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ja, ganz klar. Gerade defekte, abgeschriebene oder unfallbeschädigte Fahrzeuge sind unser Spezialgebiet. Ob Motorschaden, Getriebeschaden, Unfallwagen oder einfach altersschwach – wir machen ein Angebot. Auch ohne TÜV, abgemeldet oder mit Vollkaskoschaden. Einfach Fotos schicken und Angebot einholen. Wichtig: Das Fahrzeug sollte vollständig sein und alle verbauten Teile enthalten." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
   <!-- ===== NAVIGATION ===== -->
   <nav class="nav" id="nav">
     <div class="container nav__inner">
-      <a href="#" class="nav__logo">fzankauf<span class="text-accent">.de</span></a>
+      <a href="#" class="nav__logo" aria-label="FZAnkauf – Startseite">
+        <img src="assets/logos/fzankauf-icon.png" alt="" class="nav__logo-icon" width="40" height="40">
+        <span>FZAnkauf</span>
+      </a>
       <a href="tel:+49 155 10117300" class="nav__phone">+49 155 10117300</a>
       <button class="nav__toggle" id="navToggle" aria-label="Menü öffnen">
         <span></span><span></span><span></span>
@@ -256,7 +358,7 @@
         </details>
         <details class="faq__item">
           <summary class="faq__question">
-            <span>Fallieren Gebühren an? Was kostet der Service?</span>
+            <span>Fallen Gebühren an? Was kostet der Service?</span>
             <svg class="faq__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="faq__answer">
@@ -370,7 +472,10 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a href="#" class="nav__logo">fzankauf<span class="text-accent">.de</span></a>
+          <a href="#" class="nav__logo" aria-label="FZAnkauf – Startseite">
+            <img src="assets/logos/fzankauf-icon.png" alt="" class="nav__logo-icon" width="40" height="40">
+            <span>FZAnkauf</span>
+          </a>
           <p>Euro-Truck Handel GmbH – Ihr Familienunternehmen für den fairen Ankauf von Nutzfahrzeugen. Wir kaufen LKW, Transporter und Baumaschinen bundesweit auf. Fair, transparent, unkompliziert. Persönliche Besichtigung vor Ort – direkt vom Geschäftsführer.</p>
         </div>
         <div class="footer__links">
