@@ -19,6 +19,7 @@
 .cc-banner {
   background: #ffffff;
   border: 1px solid #dcd9d3;
+  border-top: 3px solid #f3580a;
   max-width: 540px;
   width: 100%;
   padding: 2rem;
@@ -27,11 +28,20 @@
 }
 
 .cc-banner__title {
-  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.35rem;
   font-weight: 600;
   color: #0d2137;
-  margin-bottom: 0.5rem;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  margin-bottom: 0.6rem;
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+}
+.cc-banner__title svg {
+  width: 22px;
+  height: 22px;
+  color: #f3580a;
+  flex-shrink: 0;
 }
 
 .cc-banner__text {
@@ -144,6 +154,10 @@
 .cc-btn--accept {
   background: #f3580a;
   color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1.75rem;
+  clip-path: polygon(7px 0, 100% 0, calc(100% - 7px) 100%, 0 100%);
 }
 .cc-btn--accept:hover {
   background: #d4440a;

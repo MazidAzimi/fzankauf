@@ -63,10 +63,13 @@
     overlay.className = 'cc-overlay';
     overlay.innerHTML =
       '<div class="cc-banner">' +
-        '<div class="cc-banner__title">🍪 Datenschutz-Einstellungen</div>' +
+        '<div class="cc-banner__title">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>' +
+          'Datenschutz-Einstellungen' +
+        '</div>' +
         '<p class="cc-banner__text">' +
-          'Wir nutzen Cookies und ähnliche Technologien, um unsere Website<br>für Sie optimal bereitzustellen. ' +
-          'Einige sind technisch notwendig, andere helfen uns,<br>die Reichweite zu messen (Meta Pixel, LinkedIn Insight). ' +
+          'Wir nutzen Cookies, um diese Website bereitzustellen und ihre Reichweite zu messen. ' +
+          'Notwendige Cookies sind immer aktiv. Marketing &amp; Analytics nur mit Ihrer Zustimmung. ' +
           'Details: <a href="datenschutz.html">Datenschutzerklärung</a> | <a href="impressum.html">Impressum</a>' +
         '</p>' +
         '<div class="cc-banner__options">' +
