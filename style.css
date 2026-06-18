@@ -18,8 +18,8 @@
   --border-light: #eae7e2;    /* Sehr leichte Border */
 
   /* Akzentfarben (unverändert — etablierte Brand) */
-  --amber: #f5a623;
-  --amber-glow: #d4891a;
+  --amber: #f3580a;
+  --amber-glow: #d4440a;
   --safety: #f3580a;
   --safety-dark: #d4440a;
   --success: #16a34a;
@@ -37,6 +37,7 @@
 
   /* Typography */
   --font-display: 'Bebas Neue', 'Arial Narrow', 'Franklin Gothic Medium', 'Impact', sans-serif;
+  --font-heading: 'Lora', Georgia, 'Times New Roman', serif;
   --font-body: 'IBM Plex Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --font-mono: 'IBM Plex Mono', 'Cascadia Code', 'Fira Code', monospace;
 
@@ -49,8 +50,8 @@
   --radius: 2px;
   --radius-sm: 1px;
   --border-heavy: 1px solid var(--border);
-  --border-accent: 1px solid rgba(245, 166, 35, 0.35);
-  --glow-amber: 0 0 30px rgba(245, 166, 35, 0.08);
+  --border-accent: 1px solid rgba(243, 88, 10, 0.35);
+  --glow-amber: 0 0 30px rgba(243, 88, 10, 0.08);
   --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.10);
 
@@ -92,17 +93,27 @@ body {
 }
 
 /* ---------- Typography ---------- */
-h1, h2, h3, h4, .section-title, .hero__title {
+h1, h2, .section-title, .hero__title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.14;
+  text-transform: none;
+  color: var(--heading);
+}
+
+/* Kachel-/Karten-Titel zurück auf die ursprüngliche Display-Schrift */
+h3, h4 {
   font-family: var(--font-display);
   font-weight: 400;
-  letter-spacing: 0.01em;
-  line-height: 1.05;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
   text-transform: uppercase;
   color: var(--heading);
 }
 
 .section-title {
-  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  font-size: clamp(1.9rem, 4.5vw, 3.1rem);
   text-align: center;
   margin-bottom: 0.5rem;
   position: relative;
@@ -139,10 +150,6 @@ h1, h2, h3, h4, .section-title, .hero__title {
 
 .text-accent {
   color: var(--safety);
-  background: linear-gradient(180deg, var(--amber) 0%, var(--safety) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 /* ---------- Utility: Hazard Stripe ---------- */
@@ -342,7 +349,7 @@ h1, h2, h3, h4, .section-title, .hero__title {
 .hero {
   padding: clamp(4rem, 10vw, 6rem) 0 clamp(2rem, 4vw, 3rem);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   min-height: auto;
   display: flex;
   align-items: center;
@@ -350,8 +357,17 @@ h1, h2, h3, h4, .section-title, .hero__title {
   background: linear-gradient(180deg, #fefdfb 0%, var(--bg) 100%);
 }
 
+/* Geclippte Hintergrund-Ebene für die Glow-Orbs (Hero selbst schneidet Text nicht mehr ab) */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* Safety-Orange Glow Orb */
-.hero::before {
+.hero__bg::before {
   content: '';
   position: absolute;
   top: -20%;
@@ -364,7 +380,7 @@ h1, h2, h3, h4, .section-title, .hero__title {
 }
 
 /* Navy Glow Orb links unten */
-.hero::after {
+.hero__bg::after {
   content: '';
   position: absolute;
   bottom: 10%;
@@ -422,13 +438,15 @@ h1, h2, h3, h4, .section-title, .hero__title {
 }
 
 .hero__title {
-  font-size: clamp(3.2rem, 8vw, 5.8rem);
-  font-weight: 400;
-  line-height: 0.92;
-  letter-spacing: 0;
+  font-size: clamp(2.5rem, 6vw, 4.4rem);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -0.015em;
   color: var(--heading);
   margin-bottom: 1rem;
   max-width: 100%;
+  /* Seitlicher Puffer, damit kursive Buchstaben am Zeilenende (z. B. „fair") nicht abgeschnitten werden */
+  padding: 0 0.3em;
 }
 
 .hero__sub {
@@ -578,10 +596,64 @@ h1, h2, h3, h4, .section-title, .hero__title {
   box-shadow: var(--shadow-card);
 }
 .problem__card--top {
-  border-left: 3px solid var(--border);
+  border-left: 3px solid #cfd4da;
+  background: #edeff2;
+  border-color: #e1e4e8;
+}
+.problem__card--top strong {
+  color: var(--body-muted);
 }
 .problem__card--bottom {
-  border-left: 3px solid var(--amber);
+  border-left: 3px solid var(--safety);
+  box-shadow: var(--shadow-card);
+}
+
+/* Vorher/Nachher-Labels */
+.problem__tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--body-muted);
+  margin-bottom: 0.45rem;
+}
+.problem__tag--good {
+  color: var(--safety);
+}
+
+/* ✗/✓-Listen im Vergleich */
+.problem__points {
+  list-style: none;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.problem__points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--body);
+}
+.problem__points svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  margin-top: 0.12rem;
+}
+.problem__points--bad li {
+  color: var(--body-muted);
+}
+.problem__points--bad svg {
+  color: #a6acb5;
+}
+.problem__points--good svg {
+  color: var(--safety);
 }
 
 .problem__icon {
@@ -633,11 +705,11 @@ h1, h2, h3, h4, .section-title, .hero__title {
 }
 .warum__text h2 {
   color: #fff;
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  line-height: 1.1;
-  letter-spacing: 0.01em;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 3.6vw, 2.4rem);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
   margin-bottom: 1.5rem;
 }
 .warum__text h2::after {
@@ -675,11 +747,12 @@ h1, h2, h3, h4, .section-title, .hero__title {
 }
 .warum__num {
   display: block;
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
+  font-weight: 600;
   font-size: clamp(2.2rem, 4vw, 2.9rem);
   color: var(--safety);
   line-height: 1;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   margin-bottom: 0.6rem;
 }
 .warum__label {
@@ -725,9 +798,9 @@ h1, h2, h3, h4, .section-title, .hero__title {
   width: 48px;
   height: 48px;
   margin-bottom: 1.25rem;
-  background: rgba(245, 166, 35, 0.08);
-  border: 1px solid rgba(245, 166, 35, 0.18);
-  color: var(--amber);
+  background: rgba(13, 33, 55, 0.06);
+  border: 1px solid rgba(13, 33, 55, 0.14);
+  color: var(--ink);
 }
 
 .vorteile__card h3 {
@@ -795,7 +868,7 @@ h1, h2, h3, h4, .section-title, .hero__title {
   justify-content: center;
   margin-bottom: 1rem;
   height: 56px;
-  color: var(--amber);
+  color: var(--ink);
 }
 .fahrzeug-card__img svg {
   width: 48px;
@@ -1074,25 +1147,35 @@ h1, h2, h3, h4, .section-title, .hero__title {
 .mid-cta {
   padding: var(--section-gap) 0;
   text-align: center;
+  background: var(--ink);
+  border-top: var(--border-heavy);
+  border-bottom: var(--border-heavy);
 }
 .mid-cta__inner {
   max-width: 600px;
   margin: 0 auto;
 }
 .mid-cta__title {
-  font-family: var(--font-display);
-  font-size: 2.4rem;
-  font-weight: 400;
-  color: var(--heading);
-  line-height: 1.1;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 3.6vw, 2.4rem);
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.16;
+  text-transform: none;
+  letter-spacing: -0.01em;
   margin-bottom: 0.5rem;
 }
 .mid-cta__text {
   font-size: 1.1rem;
-  color: var(--body-muted);
+  color: rgba(255, 255, 255, 0.72);
   margin-bottom: 1.75rem;
+}
+/* Auf dunklem Grund muss der CTA orange sein, sonst verschwindet er */
+.mid-cta .btn--primary {
+  background: var(--safety);
+}
+.mid-cta .btn--primary:hover {
+  background: var(--safety-dark);
 }
 
 /* ---------- FAQ ---------- */
@@ -1372,4 +1455,85 @@ h1, h2, h3, h4, .section-title, .hero__title {
   .nav__phone {
     display: none;
   }
+}
+
+/* ============================================================
+   DESIGN-POLISH — Industrial Heritage
+   ============================================================ */
+
+/* Serifen-Akzentwörter in Überschriften kursiv (editorial) */
+.hero__title .text-accent,
+.section-title .text-accent,
+.warum__text h2 .text-accent {
+  font-style: italic;
+  /* Raum für die schräge Serife rechts, sonst wird der letzte Buchstabe abgeschnitten */
+  padding-right: 0.12em;
+  margin-right: -0.04em;
+}
+
+/* Sektions-Unterstrich an Logo-Orange angleichen */
+.section-title::after {
+  background: var(--safety);
+  width: 88px;
+  height: 3px;
+}
+
+/* Eyebrow-Label über Überschriften */
+.eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--safety);
+  margin-bottom: 0.85rem;
+}
+.eyebrow--center {
+  text-align: center;
+}
+
+/* Dunkle Akzent-Sektionen: Tiefe, feine Textur, Orange-Linie */
+.warum,
+.mid-cta {
+  background: linear-gradient(165deg, #12304f 0%, var(--ink) 58%, #091829 100%);
+  position: relative;
+  overflow: hidden;
+}
+.warum::before,
+.mid-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.022) 0 1px, transparent 1px 24px);
+  pointer-events: none;
+}
+.warum::after,
+.mid-cta::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--safety) 0%, rgba(243, 88, 10, 0) 55%);
+}
+.warum > .container,
+.mid-cta > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer ins Marine-Motiv einbinden */
+.footer {
+  position: relative;
+}
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--safety) 0%, rgba(243, 88, 10, 0) 50%);
 }
