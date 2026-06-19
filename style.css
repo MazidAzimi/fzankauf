@@ -505,10 +505,10 @@ h3, h4 {
 /* Hero-Bilderband (Fuhrpark + Transporter) */
 .hero__media {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   gap: 1rem;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 2.5rem auto 0;
 }
 .hero__media-item {
