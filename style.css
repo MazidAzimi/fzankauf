@@ -968,7 +968,7 @@ h3, h4 {
 
 .kontakt__grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
   gap: 5rem;
   align-items: start;
 }
@@ -1005,11 +1005,12 @@ h3, h4 {
   border: var(--border-heavy);
   padding: 2.25rem;
   box-shadow: var(--shadow-card);
+  min-width: 0;
 }
 
 .form__row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 1rem;
 }
 
@@ -1018,6 +1019,7 @@ h3, h4 {
   flex-direction: column;
   gap: 0.35rem;
   margin-bottom: 1.25rem;
+  min-width: 0;
 }
 
 .form__group label {
@@ -1036,6 +1038,9 @@ h3, h4 {
 .form__group input,
 .form__group select,
 .form__group textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: 0.8rem 1rem;
   border: 1px solid var(--border);
   background: var(--bg);
@@ -1044,6 +1049,11 @@ h3, h4 {
   transition: border-color 0.2s, box-shadow 0.2s;
   color: var(--body);
   caret-color: var(--safety);
+}
+/* Datei-Upload bändigen: langer "keine Datei"-Text darf nicht überlaufen */
+.form__group input[type="file"] {
+  max-width: 100%;
+  font-size: 0.85rem;
 }
 .form__group input:focus,
 .form__group select:focus,
@@ -1354,7 +1364,7 @@ h3, h4 {
   .problem__grid,
   .warum__grid,
   .kontakt__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 3rem;
   }
 
