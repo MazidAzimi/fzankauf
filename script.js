@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ---- Nav: Scrolled State ----
   var nav = document.getElementById('nav');
+  var mobileCta = document.getElementById('mobileCta');
   if (nav) {
     var scrollThreshold = 60;
     var ticking = false;
@@ -35,6 +36,14 @@ document.addEventListener('DOMContentLoaded', function () {
         nav.classList.add('nav--scrolled');
       } else {
         nav.classList.remove('nav--scrolled');
+      }
+      // Sticky-Mobil-CTA nach etwas Scrollen einblenden
+      if (mobileCta) {
+        if (window.pageYOffset > 500) {
+          mobileCta.classList.add('is-visible');
+        } else {
+          mobileCta.classList.remove('is-visible');
+        }
       }
       ticking = false;
     }
@@ -94,7 +103,33 @@ document.addEventListener('DOMContentLoaded', function () {
   var form = document.getElementById('ankaufForm');
 
   if (form) {
+    var emailEl = document.getElementById('email');
+    var telEl = document.getElementById('telefon');
+    var hintEl = document.querySelector('.form__hint');
+    var hintOriginal = hintEl ? hintEl.innerHTML : '';
+
+    function clearHintError() {
+      if (hintEl) {
+        hintEl.classList.remove('form__hint--error');
+        hintEl.innerHTML = hintOriginal;
+      }
+    }
+    [emailEl, telEl].forEach(function (el) {
+      if (el) el.addEventListener('input', clearHintError);
+    });
+
     form.addEventListener('submit', function (e) {
+      // Mindestens ein Kontaktweg (E-Mail oder Telefon)
+      if (emailEl && telEl && !emailEl.value.trim() && !telEl.value.trim()) {
+        e.preventDefault();
+        if (hintEl) {
+          hintEl.textContent = 'Bitte E-Mail oder Telefon angeben – mindestens ein Kontaktweg.';
+          hintEl.classList.add('form__hint--error');
+        }
+        emailEl.focus();
+        return;
+      }
+      // Datei-Größe prüfen
       var fileInput = document.getElementById('fotos');
       if (fileInput && fileInput.files.length > 0) {
         var maxSize = 10 * 1024 * 1024; // 10 MB

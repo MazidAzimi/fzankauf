@@ -477,14 +477,15 @@
           </div>
           <div class="form__row">
             <div class="form__group">
-              <label for="email">E-Mail <span class="required">*</span></label>
-              <input type="email" id="email" name="email" placeholder="ihre@email.de" required>
+              <label for="email">E-Mail</label>
+              <input type="email" id="email" name="email" placeholder="ihre@email.de">
             </div>
             <div class="form__group">
-              <label for="telefon">Telefon <span class="required">*</span></label>
-              <input type="tel" id="telefon" name="telefon" placeholder="+49 …" required>
+              <label for="telefon">Telefon</label>
+              <input type="tel" id="telefon" name="telefon" placeholder="+49 …">
             </div>
           </div>
+          <p class="form__hint">E-Mail <strong>oder</strong> Telefon genügt – mindestens ein Kontaktweg.</p>
           <div class="form__group">
             <label for="fahrzeugtyp">Fahrzeugtyp <span class="required">*</span></label>
             <select id="fahrzeugtyp" name="fahrzeugtyp" required>
@@ -504,8 +505,8 @@
               <input type="text" id="marke" name="marke" placeholder="z. B. MAN TGX" required>
             </div>
             <div class="form__group">
-              <label for="baujahr">Baujahr <span class="required">*</span></label>
-              <input type="text" id="baujahr" name="baujahr" placeholder="z. B. 2014" required>
+              <label for="baujahr">Baujahr <span class="form__optlabel">(optional)</span></label>
+              <input type="text" id="baujahr" name="baujahr" placeholder="z. B. 2014">
             </div>
           </div>
           <div class="form__group form__group--checkbox">
@@ -518,6 +519,7 @@
             <small>Handyfotos vom Fahrzeug reichen völlig. Max. 10 MB pro Datei.</small>
           </div>
           <button type="submit" class="btn btn--primary btn--large btn--full">Kostenlose Bewertung erhalten</button>
+          <p class="form__reassure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Antwort innerhalb von 24 Stunden · kostenlos &amp; unverbindlich · keine Weitergabe an Dritte</p>
         </form>
       </div>
     </div>
@@ -559,6 +561,15 @@
     TRACKING (Meta Pixel, LinkedIn) – hier einfügen, sobald Accounts vorhanden.
     Das consent:ready-Event aus cookie-consent.js steht dafür bereit.
   -->
+
+  <!-- Sticky CTA-Leiste (nur Mobil) -->
+  <div class="mobile-cta" id="mobileCta">
+    <a href="tel:+49 155 10117300" class="mobile-cta__btn mobile-cta__btn--call">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Anrufen
+    </a>
+    <a href="#kontakt" class="mobile-cta__btn mobile-cta__btn--primary">Fahrzeug bewerten</a>
+  </div>
 
   <script src="cookie-consent.js"></script>
   <script src="script.js"></script>

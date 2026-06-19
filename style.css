@@ -192,14 +192,14 @@ h3, h4 {
 }
 
 .btn--primary {
-  background: var(--heading);
+  background: var(--safety);
   color: var(--white);
   padding: 0.9rem 2.2rem;
   font-size: 1.05rem;
   clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
 }
 .btn--primary:hover {
-  background: var(--safety);
+  background: var(--safety-dark);
   color: var(--white);
   transform: translateY(-1px);
   box-shadow: 0 8px 30px rgba(243, 88, 10, 0.25);
@@ -1140,6 +1140,43 @@ h3, h4 {
   font-size: 0.78rem;
 }
 
+/* CRO: Formular-Hilfstexte */
+.form__hint {
+  font-size: 0.82rem;
+  color: var(--body-muted);
+  margin: -0.6rem 0 1.25rem;
+}
+.form__hint strong {
+  color: var(--heading);
+}
+.form__hint--error {
+  color: var(--safety-dark);
+  font-weight: 600;
+}
+.form__optlabel {
+  font-weight: 400;
+  color: var(--body-muted);
+  text-transform: none;
+  letter-spacing: normal;
+}
+.form__reassure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--body-muted);
+  margin-top: 0.85rem;
+  line-height: 1.4;
+}
+.form__reassure svg {
+  width: 15px;
+  height: 15px;
+  color: var(--safety);
+  flex-shrink: 0;
+}
+
 .form__group select {
   color: var(--body);
   cursor: pointer;
@@ -1621,4 +1658,57 @@ h3, h4 {
   right: 0;
   height: 3px;
   background: linear-gradient(90deg, var(--safety) 0%, rgba(243, 88, 10, 0) 50%);
+}
+
+/* ============================================================
+   CRO: Sticky CTA-Leiste (nur Mobil)
+   ============================================================ */
+.mobile-cta {
+  display: none;
+}
+@media (max-width: 640px) {
+  .mobile-cta {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    gap: 0.5rem;
+    padding: 0.55rem 0.7rem;
+    background: var(--ink);
+    border-top: 3px solid var(--safety);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.18);
+    transform: translateY(115%);
+    transition: transform 0.35s var(--ease-out);
+  }
+  .mobile-cta.is-visible {
+    transform: translateY(0);
+  }
+  .mobile-cta__btn {
+    flex: 1 1 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.85rem 0.5rem;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .mobile-cta__btn--call {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  .mobile-cta__btn--primary {
+    background: var(--safety);
+    color: #fff;
+    flex: 1.35 1 0;
+  }
+  body {
+    padding-bottom: 4.5rem;
+  }
 }
