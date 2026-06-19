@@ -502,6 +502,56 @@ h3, h4 {
   letter-spacing: 0.03em;
 }
 
+/* Hero-Bilderband (Fuhrpark + Transporter) */
+.hero__media {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 2.5rem auto 0;
+}
+.hero__media-item {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  background: var(--surface);
+}
+.hero__media-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease-out);
+}
+.hero__media-item:hover img {
+  transform: scale(1.04);
+}
+.hero__media-item figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  background: rgba(13, 33, 55, 0.9);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: left;
+}
+.hero__media-item figcaption svg {
+  width: 16px;
+  height: 16px;
+  color: var(--safety);
+  flex-shrink: 0;
+}
+
 .hero__trust {
   display: flex;
   gap: 2rem;
@@ -1405,6 +1455,11 @@ h3, h4 {
 
   .form__row {
     grid-template-columns: 1fr;
+  }
+
+  .hero__media {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 460px;
   }
 
   .hero {
