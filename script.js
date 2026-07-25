@@ -3,6 +3,10 @@
    Mobile Nav, Form Validation, Scroll Reveal, Nav Styling
    ============================================================ */
 
+/* Signalisiert dem CSS, dass JS aktiv ist. Erst dann werden Reveal-Elemente
+   ausgeblendet (Progressive Enhancement) – ohne JS bleibt alles sichtbar. */
+document.documentElement.classList.add('js');
+
 document.addEventListener('DOMContentLoaded', function () {
 
   // ---- Mobile Nav Toggle ----
@@ -21,6 +25,34 @@ document.addEventListener('DOMContentLoaded', function () {
         navLinks.classList.remove('open');
         toggle.setAttribute('aria-label', 'Menü öffnen');
       });
+    });
+  }
+
+  // ---- Nav: Fahrzeuge-Dropdown ----
+  var dropdown = document.getElementById('navDropdown');
+  var dropdownToggle = document.getElementById('navDropdownToggle');
+
+  if (dropdown && dropdownToggle) {
+    dropdownToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = dropdown.classList.toggle('open');
+      dropdownToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Klick außerhalb schließt das Dropdown
+    document.addEventListener('click', function (e) {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Escape schließt das Dropdown
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        dropdown.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      }
     });
   }
 
@@ -97,6 +129,68 @@ document.addEventListener('DOMContentLoaded', function () {
         el.classList.add('reveal--visible');
       }
     });
+  }
+
+  // ---- Trust-Zahlen hochzaehlen (Vertrauen = Zahlen) ----
+  var statNums = document.querySelectorAll('.warum__num');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (statNums.length > 0) {
+    statNums.forEach(function (el) {
+      var raw = el.textContent.trim();
+      var digits = raw.replace(/\D/g, '');
+      if (!digits) return;
+      el.setAttribute('data-count', digits);
+      el.dataset.suffix = raw.replace(/[\d.]/g, '');   // z. B. "+" oder "%"
+      el.dataset.grouped = raw.indexOf('.') !== -1 ? '1' : '';
+    });
+
+    var countables = document.querySelectorAll('.warum__num[data-count]');
+
+    function fmtNum(n, grouped) {
+      return grouped ? n.toLocaleString('de-DE') : String(n);
+    }
+
+    function runCount(el) {
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var grouped = el.dataset.grouped === '1';
+      var suffix = el.dataset.suffix || '';
+      if (reduceMotion || !('requestAnimationFrame' in window)) {
+        el.textContent = fmtNum(target, grouped) + suffix;
+        el.classList.add('is-done');
+        return;
+      }
+      el.classList.add('is-counting');
+      var duration = 1400;
+      var start = performance.now();
+      function tick(now) {
+        var p = Math.min((now - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - p, 4);            // easeOutQuart – ruhiger Auslauf
+        el.textContent = fmtNum(Math.round(target * eased), grouped) + suffix;
+        if (p < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = fmtNum(target, grouped) + suffix;
+          el.classList.remove('is-counting');
+          el.classList.add('is-done');
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+
+    if (countables.length > 0 && 'IntersectionObserver' in window) {
+      var statObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            runCount(entry.target);
+            statObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      countables.forEach(function (el) { statObserver.observe(el); });
+    } else {
+      countables.forEach(runCount);
+    }
   }
 
   // ---- Form Submission ----
