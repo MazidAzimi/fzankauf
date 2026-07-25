@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-25T00:00:00.000Z",
+  "title": "Design System: fzankauf.de",
+  "extensions": {
+    "colorMeta": {
+      "stempelorange": {
+        "role": "primary",
+        "displayName": "Stempelorange",
+        "canonical": "#f3580a",
+        "tonalRamp": [
+          "#2b0f02",
+          "#4d1b04",
+          "#7a2b06",
+          "#a83a08",
+          "#d4440a",
+          "#f3580a",
+          "#f8895a",
+          "#fdd9c8"
+        ]
+      },
+      "frachtbrief-marine": {
+        "role": "secondary",
+        "displayName": "Frachtbrief-Marine",
+        "canonical": "#0d2137",
+        "tonalRamp": [
+          "#040b13",
+          "#081522",
+          "#0d2137",
+          "#173350",
+          "#24476b",
+          "#3d6b99",
+          "#7a9cc0",
+          "#c8d8e8"
+        ]
+      },
+      "quittungsgruen": {
+        "role": "tertiary",
+        "displayName": "Quittungsgrün",
+        "canonical": "#16a34a",
+        "tonalRamp": [
+          "#04170a",
+          "#072a13",
+          "#0b4a21",
+          "#106b30",
+          "#16a34a",
+          "#34c76a",
+          "#7ade9f",
+          "#c9f2d8"
+        ]
+      },
+      "papier": {
+        "role": "neutral",
+        "displayName": "Papier",
+        "canonical": "#faf8f5",
+        "tonalRamp": [
+          "#26241f",
+          "#413e37",
+          "#5f5b52",
+          "#8b867c",
+          "#b5b0a6",
+          "#dcd9d3",
+          "#f3f1ed",
+          "#faf8f5"
+        ]
+      },
+      "schriftgrau": {
+        "role": "neutral",
+        "displayName": "Schriftgrau",
+        "canonical": "#374151",
+        "tonalRamp": [
+          "#0b0e12",
+          "#1a1f27",
+          "#374151",
+          "#5b626e",
+          "#8a919b",
+          "#b6bbc3",
+          "#dcdfe4",
+          "#f1f2f5"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Nur die H1 im Hero. Kursiv gesetzte Teilphrasen in Stempelorange sind das erlaubte Ausdrucksmittel."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Sektions-H2, zentriert."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Kartentitel und H3/H4 in Bebas-Versalien. Maximal 26 Zeichen, keine Kommas."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Fließtext, Lesespalte auf 780px begrenzt."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Der Kicker über jeder Sektion, Laufweite 0.2em, in Stempelorange."
+      }
+    },
+    "shadows": [
+      {
+        "name": "karten-hauch",
+        "value": "0 2px 16px rgba(0, 0, 0, 0.06)",
+        "purpose": "Sehr zurückhaltend, nur wo eine Karte sich vom Papier lösen muss."
+      },
+      {
+        "name": "gehoben",
+        "value": "0 8px 40px rgba(0, 0, 0, 0.10)",
+        "purpose": "Overlays und das Nav-Dropdown."
+      },
+      {
+        "name": "orange-abdruck",
+        "value": "0 8px 30px rgba(243, 88, 10, 0.25)",
+        "purpose": "Ausschließlich Hover auf dem Primär-CTA."
+      },
+      {
+        "name": "fokus-ring",
+        "value": "0 0 0 3px rgba(243, 88, 10, 0.08)",
+        "purpose": "Formularfelder im Fokus, zusammen mit orangem Rand."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Standard-Easing (ease-out-expo): selbstbewusst, ruhig."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(0.65, 0, 0.35, 1)",
+        "purpose": "Symmetrische Übergänge, z. B. Akkordeon."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "brotkrume-aus",
+        "value": "1149px"
+      },
+      {
+        "name": "raster-zwei-spalten",
+        "value": "900px"
+      },
+      {
+        "name": "raster-eine-spalte",
+        "value": "640px"
+      },
+      {
+        "name": "mobil-overlay",
+        "value": "600px"
+      },
+      {
+        "name": "klein",
+        "value": "480px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primär-Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Der einzige Signalton der Seite, mit der gekappten Ecke als Signatur.",
+      "html": "<a href=\"#kontakt\" class=\"ds-btn-primary\">Fahrzeug jetzt bewerten lassen</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font-family: 'Bebas Neue', 'Arial Narrow', Impact, sans-serif; font-weight: 400; font-size: 1.05rem; text-transform: uppercase; letter-spacing: .06em; text-decoration: none; background: #f3580a; color: #fff; padding: .9rem 2.2rem; border: none; border-radius: 0; cursor: pointer; clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%); transition: all .2s cubic-bezier(.16,1,.3,1); } .ds-btn-primary:hover { background: #d4440a; transform: translateY(-1px); box-shadow: 0 8px 30px rgba(243,88,10,.25); } .ds-btn-primary:focus-visible { outline: 2px solid #0d2137; outline-offset: 3px; } .ds-btn-primary:active { transform: translateY(0); }"
+    },
+    {
+      "name": "Sekundär-Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Zurückhaltende Alternative: Haarlinie statt Fläche.",
+      "html": "<a href=\"tel:+4915510117300\" class=\"ds-btn-secondary\">Anrufen</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font-family: 'Bebas Neue', 'Arial Narrow', Impact, sans-serif; font-size: 1.05rem; text-transform: uppercase; letter-spacing: .06em; text-decoration: none; background: transparent; color: #0d2137; padding: .9rem 2.2rem; border: 1px solid #dcd9d3; border-radius: 2px; transition: all .2s cubic-bezier(.16,1,.3,1); } .ds-btn-secondary:hover { border-color: #f3580a; color: #f3580a; } .ds-btn-secondary:focus-visible { outline: 2px solid #f3580a; outline-offset: 2px; }"
+    },
+    {
+      "name": "Vorteils-Karte",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Icon, Versalien-Titel, fetter Lead-Satz plus Erläuterung. Flach im Ruhezustand.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card__icon\"><svg width=\"36\" height=\"36\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2\"/><path d=\"M15 18H9\"/><path d=\"M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14\"/><circle cx=\"17\" cy=\"18\" r=\"2\"/><circle cx=\"7\" cy=\"18\" r=\"2\"/></svg></div><h3 class=\"ds-card__title\">Abholung auch bei Defekt</h3><p class=\"ds-card__text\"><strong>Wir kommen mit dem Tieflader.</strong> Die Abholung ist deutschlandweit und für Sie kostenlos.</p></div>",
+      "css": ".ds-card { background: #fff; padding: 2.5rem 2rem; border-radius: 2px; transition: background .25s cubic-bezier(.16,1,.3,1), transform .25s cubic-bezier(.16,1,.3,1); } .ds-card:hover { transform: translateY(-2px); box-shadow: 0 2px 16px rgba(0,0,0,.06); } .ds-card__icon { color: #f3580a; margin-bottom: 1rem; } .ds-card__title { font-family: 'Bebas Neue', 'Arial Narrow', Impact, sans-serif; font-weight: 400; font-size: 1.3rem; letter-spacing: .04em; line-height: 1.1; text-transform: uppercase; color: #0d2137; margin: 0 0 .6rem; } .ds-card__text { font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; font-size: 1rem; line-height: 1.6; color: #374151; margin: 0; } .ds-card__text strong { display: block; color: #0d2137; font-weight: 600; margin-bottom: .25rem; }"
+    },
+    {
+      "name": "Formularfeld",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Papier-Füllung mit Haarlinie; Fokus schaltet auf Stempelorange.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field__label\">Marke &amp; Modell</span><input class=\"ds-field__input\" type=\"text\" placeholder=\"z. B. MAN TGX 18.440\"></label>",
+      "css": ".ds-field { display: block; } .ds-field__label { display: block; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; font-size: .82rem; font-weight: 600; color: #0d2137; margin-bottom: .35rem; } .ds-field__input { width: 100%; padding: .8rem 1rem; border: 1px solid #dcd9d3; border-radius: 2px; background: #faf8f5; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; font-size: .92rem; color: #374151; transition: border-color .2s cubic-bezier(.16,1,.3,1), box-shadow .2s cubic-bezier(.16,1,.3,1); } .ds-field__input::placeholder { color: #5b626e; } .ds-field__input:focus { outline: none; border-color: #f3580a; box-shadow: 0 0 0 3px rgba(243,88,10,.08); }"
+    },
+    {
+      "name": "Kicker",
+      "kind": "chip",
+      "refersTo": "eyebrow",
+      "description": "Signatur-Element: eröffnet jede Sektion und ersetzt die Rahmung.",
+      "html": "<span class=\"ds-eyebrow\">Ihre Vorteile</span>",
+      "css": ".ds-eyebrow { display: block; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; font-size: .78rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #f3580a; margin-bottom: .85rem; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Fixiert; ab 60px Scroll mit Papier-Hintergrund und unterer Haarlinie.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav__brand\">FZAnkauf</span><a class=\"ds-nav__link\" href=\"#vorteile\">Vorteile</a><a class=\"ds-nav__link\" href=\"#ablauf\">Ablauf</a><a class=\"ds-nav__cta\" href=\"#kontakt\">Fahrzeug bewerten</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 1.5rem; padding: .75rem 1.25rem; background: #faf8f5; border-bottom: 1px solid #dcd9d3; } .ds-nav__brand { font-family: 'Bebas Neue', 'Arial Narrow', Impact, sans-serif; font-size: 1.2rem; letter-spacing: .04em; color: #0d2137; margin-right: auto; } .ds-nav__link { font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; font-size: .95rem; color: #374151; text-decoration: none; transition: color .2s cubic-bezier(.16,1,.3,1); } .ds-nav__link:hover { color: #f3580a; } .ds-nav__cta { font-family: 'Bebas Neue', 'Arial Narrow', Impact, sans-serif; font-size: .95rem; text-transform: uppercase; letter-spacing: .06em; text-decoration: none; color: #f3580a; border: 1px solid #f3580a; border-radius: 2px; padding: .45rem 1rem; transition: all .2s cubic-bezier(.16,1,.3,1); } .ds-nav__cta:hover { background: #f3580a; color: #fff; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Der Frachtbrief",
+    "overview": "Ein Frachtbrief ist kein Werbemittel. Er ist ein verbindliches Dokument: sachlich gesetzt, gestempelt, ohne Zierrat — und genau deshalb glaubt man ihm. Diese Seite verkauft ein Versprechen, das dieselbe Qualität braucht: ein Preis, der gilt. Also sieht sie aus wie ein Papier, das jemand unterschrieben hat, nicht wie eine Anzeige, die jemand geschaltet hat.\n\nPraktisch heißt das: warmes Off-White als Papierfläche, harte 2px-Kanten statt weicher Radien, Linien statt Schatten, und ein einziger kräftiger Akzent, der wie ein Stempel gesetzt wird — sparsam, an der Stelle, die zählt. Die Überschriften sind gesetzt wie Vertragssätze (Serife, gemischte Schreibung, lesbar), die Beschriftungen wie Formularfelder (Versalien, schmal, gesperrt). Der Unterschied zwischen diesen beiden Stimmen ist das tragende Gestaltungsmittel des Systems.",
+    "keyCharacteristics": [
+      "Papierfarbenes Hell-Layout (#faf8f5), nie Dark Mode",
+      "Zwei Schriftstimmen mit klarer Rollentrennung: Serife spricht, Versalie beschriftet",
+      "Nahezu radiuslos (2px) — Kanten statt Rundungen",
+      "Flach im Ruhezustand; Tiefe entsteht durch Farbton-Schichtung, nicht durch Schatten",
+      "Ein Akzent, sparsam gesetzt: Stempelorange auf ≤10% der Fläche",
+      "Die gekappte Button-Ecke als wiederkehrende Signatur"
+    ],
+    "rules": [
+      {
+        "name": "Die Stempel-Regel",
+        "body": "Stempelorange erscheint auf höchstens 10% einer Bildschirmfläche und immer als Handlung oder Hinweis — nie als Dekoration. Wer zwei orange Flächen nebeneinander sieht, hat eine zu viel gesetzt.",
+        "section": "colors"
+      },
+      {
+        "name": "Die Drei-Schichten-Regel",
+        "body": "Es gibt genau drei Flächenhelligkeiten: Papier (Seite), Papier Getönt (Sektion), Reinweiß (Karte). Eine vierte Zwischenstufe zu erfinden zerstört die Ablesbarkeit der Hierarchie.",
+        "section": "colors"
+      },
+      {
+        "name": "Die Rollentrennungs-Regel",
+        "body": "Serife spricht, Versalie beschriftet. Lora traegt H1 und H2 - die Saetze, die ueberzeugen sollen. Bebas traegt Buttons, Kartentitel und Kicker und wird nie zu Fliesstext oder Hero-Headline. Geprueft und verworfen (2026-07-25): eine Bebas-gefuehrte Hero-Ueberschrift wurde gebaut, gemessen und verworfen.",
+        "section": "typography"
+      },
+      {
+        "name": "Die 26-Zeichen-Regel",
+        "body": "Kartentitel erscheinen in Versalien und dürfen 26 Zeichen nicht überschreiten — darüber brechen sie in der schmalsten Spalte (227px) auf zwei Zeilen und stehen unruhig neben einzeiligen Nachbarn.",
+        "section": "typography"
+      },
+      {
+        "name": "Die Keine-Kommas-Regel",
+        "body": "Versalien-Ueberschriften enthalten keine Kommas und keine Verbsaetze.",
+        "section": "typography"
+      },
+      {
+        "name": "Die Flach-im-Ruhezustand-Regel",
+        "body": "Eine Fläche wirft erst dann einen Schatten, wenn der Nutzer sie berührt, überfährt oder fokussiert. Wer einen Ruhe-Schatten setzt, muss begründen, warum die Farbton-Schichtung nicht reicht.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do Ueberschriften in Lora setzen und Beschriftungen in Bebas - die Rollentrennung ist das tragende Mittel.",
+      "Do Versalien-Titel bei 26 Zeichen kappen und ohne Komma formulieren.",
+      "Do Tiefe über die drei Papierschichten aufbauen, bevor du zu einem Schatten greifst.",
+      "Do Stempelorange wie einen Stempel setzen: einmal pro Blickfeld, dort wo gehandelt wird.",
+      "Do die gekappte Button-Ecke beibehalten — sie ist der wiedererkennbarste Zug des Systems.",
+      "Do Belege statt Adjektive zeigen: Handelsregister, Jahreszahl, Stückzahl."
+    ],
+    "donts": [
+      "Don't Radien über 2px vergeben. Weiche Ecken lesen sich als App, nicht als Werkzeug.",
+      "Don't Stempelorange als Flächenhintergrund für Text verwenden.",
+      "Don't eine vierte Flächenhelligkeit einführen.",
+      "Don't Karten im Ruhezustand schweben lassen.",
+      "Don't Superlative, Ausrufezeichen oder Garantie-Versprechen in Überschriften setzen.",
+      "Don't Dark Mode oder Lila-Gradienten einführen; beides ist ausdrückliche Anti-Referenz.",
+      "Don't Bebas fuer Fliesstext oder Hero-Headlines einsetzen."
+    ]
+  }
+}
