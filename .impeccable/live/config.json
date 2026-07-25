@@ -1,0 +1,7 @@
+{
+  "files": ["**/*.html"],
+  "exclude": ["hero-vergleich.html", "angebot-google-ads.html", ".superpowers/**/*.html"],
+  "insertBefore": "</body>",
+  "commentSyntax": "html",
+  "cspChecked": true
+}
