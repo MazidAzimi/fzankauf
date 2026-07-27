@@ -129,7 +129,7 @@ Eine Papier-Palette mit genau einem Signalton: warme Neutraltöne tragen die Fl�
 
 ## Typography
 
-**Alle Schnitte aus einer Superfamily: Source (Adobe).** Selbst gehostet in `assets/fonts/` (202 KB, latin + latin-ext) — kein Google-CDN, schon aus Datenschutzgründen.
+**Alle Schnitte aus einer Superfamily: Source (Adobe).** Selbst gehostet in `assets/fonts/` (76 KB, nur latin-Subset) — kein Google-CDN, schon aus Datenschutzgründen.
 
 **Display Font:** Source Serif 4, Gewicht 600 (Fallback: Georgia, serif)
 **Body Font:** Source Sans 3 (Fallback: 'Segoe UI', system-ui) — Gewichte 400, 600 und 700

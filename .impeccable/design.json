@@ -282,7 +282,8 @@
       "Don't generische Haekchen als Icon verwenden, wo ein sprechendes Motiv moeglich ist.",
       "Don't Schriften per CDN einbinden - alle Schnitte liegen selbst gehostet in assets/fonts/.",
       "Don't box-shadow auf Elementen mit clip-path erwarten - er wird weggeschnitten; filter: drop-shadow() nehmen.",
-      "Don't transition: all verwenden; es interpoliert auch font-weight und laesst Elemente auf dem Startwert haengen."
+      "Don't transition: all verwenden; es interpoliert auch font-weight und laesst Elemente auf dem Startwert haengen.",
+      "Don't das latin-ext-Subset mitliefern - im sichtbaren Text kommt kein Zeichen daraus vor (126 KB gespart)."
     ]
   }
 }
