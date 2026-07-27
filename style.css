@@ -82,11 +82,33 @@ html {
 body {
   font-family: var(--font-body);
   color: var(--body);
-  background: var(--bg);
+  background: transparent;   /* Grundton traegt html, das Licht das ::before */
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+/* ---------- Licht auf dem Blatt ----------
+   Das Papier liegt nicht flach im Neonlicht: oben minimal aufgehellt, zu den
+   unteren Ecken hin ins getoente Papier absinkend. Beide Werte stammen aus
+   der bestehenden Palette (#fefdfb nutzt der Hero schon, #f3f1ed ist die
+   zweite Papierschicht) — kein neuer Farbton, kein Buntverlauf.
+   Als fixiertes Pseudo-Element statt `background-attachment: fixed`: die
+   Lichtquelle bleibt beim Scrollen stehen, ohne dass der Browser bei jedem
+   Frame neu zeichnen muss. Das ist auf Mobilgeraeten der Unterschied
+   zwischen fluessigem und hakeligem Scrollen.
+   Die deckenden Abschnitte (weisse Karten, getoente Sektionen) liegen
+   darueber — sie lesen sich dadurch wie Papier auf Papier. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(115% 70% at 50% -10%, #fefdfb 0%, rgba(254, 253, 251, 0) 60%),
+    radial-gradient(90% 60% at 50% 115%, rgba(243, 241, 237, 0.75) 0%, rgba(243, 241, 237, 0) 65%);
 }
 
 .container {
@@ -1128,9 +1150,9 @@ h3, h4 {
   align-items: center;
   gap: 0.5rem;
 }
-.kontakt__trust-item strong {
+.kontakt__trust-icon {
   color: var(--success);
-  font-size: 1rem;
+  flex-shrink: 0;
 }
 
 /* Form */

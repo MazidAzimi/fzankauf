@@ -229,7 +229,7 @@
       },
       {
         "name": "Die Drei-Schichten-Regel",
-        "body": "Es gibt genau drei Flächenhelligkeiten: Papier (Seite), Papier Getönt (Sektion), Reinweiß (Karte). Eine vierte Zwischenstufe zu erfinden zerstört die Ablesbarkeit der Hierarchie.",
+        "body": "Es gibt genau drei Flächenhelligkeiten: Papier (Seite), Papier Getönt (Sektion), Reinweiß (Karte). Eine vierte Zwischenstufe zu erfinden zerstört die Ablesbarkeit der Hierarchie. Die unterste Schicht liegt unter Licht: ein fixiertes Pseudo-Element hellt sie oben auf und laesst sie zu den unteren Ecken ins getoente Papier absinken - kein neuer Ton, kein Buntverlauf.",
         "section": "colors"
       },
       {
@@ -283,7 +283,8 @@
       "Don't Schriften per CDN einbinden - alle Schnitte liegen selbst gehostet in assets/fonts/.",
       "Don't box-shadow auf Elementen mit clip-path erwarten - er wird weggeschnitten; filter: drop-shadow() nehmen.",
       "Don't transition: all verwenden; es interpoliert auch font-weight und laesst Elemente auf dem Startwert haengen.",
-      "Don't das latin-ext-Subset mitliefern - im sichtbaren Text kommt kein Zeichen daraus vor (126 KB gespart)."
+      "Don't das latin-ext-Subset mitliefern - im sichtbaren Text kommt kein Zeichen daraus vor (126 KB gespart).",
+      "Don't dekorative Zeichen als Text setzen; sie fallen aus der Schrift heraus - Inline-SVG nehmen."
     ]
   }
 }

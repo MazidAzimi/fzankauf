@@ -125,7 +125,9 @@ Eine Papier-Palette mit genau einem Signalton: warme Neutraltöne tragen die Fl�
 ### Named Rules
 **Die Stempel-Regel.** Stempelorange erscheint auf höchstens 10% einer Bildschirmfläche und immer als Handlung oder Hinweis — nie als Dekoration. Wer zwei orange Flächen nebeneinander sieht, hat eine zu viel gesetzt.
 
-**Die Drei-Schichten-Regel.** Es gibt genau drei Flächenhelligkeiten: Papier (Seite), Papier Getönt (Sektion), Reinweiß (Karte). Eine vierte Zwischenstufe zu erfinden zerstört die Ablesbarkeit der Hierarchie.
+**Die Drei-Schichten-Regel.** Es gibt genau drei Flächen: Papier (Seite), Papier Getönt (Sektion), Reinweiß (Karte). Eine vierte Zwischenstufe zu erfinden zerstört die Ablesbarkeit der Hierarchie.
+
+Die unterste Schicht ist dabei nicht flach gefüllt, sondern liegt unter Licht: ein fixiertes Pseudo-Element hellt sie oben auf (`#fefdfb`) und lässt sie zu den unteren Ecken hin ins getönte Papier absinken. Beide Werte stammen aus der Palette — es entsteht **kein** neuer Ton und kein Buntverlauf. Die deckenden Sektionen und Karten liegen darüber und lesen sich dadurch wie Papier auf Papier. Umgesetzt als fixiertes Pseudo-Element statt `background-attachment: fixed`, weil letzteres auf Mobilgeräten bei jedem Frame neu zeichnet.
 
 ## Typography
 
@@ -244,7 +246,8 @@ Drei Rollen, drei Formulierungen, keine wiederholt die andere: Navigation „Fah
 ### Don't:
 - **Don't** Radien über 2px vergeben. Weiche Ecken lesen sich als App, nicht als Werkzeug.
 - **Don't** Stempelorange als Flächenhintergrund für Text verwenden.
-- **Don't** eine vierte Flächenhelligkeit einführen.
+- **Don't** eine vierte Flächenhelligkeit einführen — das Licht auf der untersten Schicht ist kein eigener Ton, sondern eine Aufhellung derselben Palette.
+- **Don't** dekorative Zeichen als Text setzen (✓, ←). Sie fallen aus der Schrift heraus und rendern je nach System anders — Inline-SVG nehmen.
 - **Don't** Karten im Ruhezustand schweben lassen.
 - **Don't** die Versalien-Auszeichnung für Fließtext oder Hero-Headlines einsetzen (siehe Rollentrennungs-Regel).
 - **Don't** Superlative, Ausrufezeichen oder Garantie-Versprechen in Überschriften setzen — dorthin gehören Fakten.
