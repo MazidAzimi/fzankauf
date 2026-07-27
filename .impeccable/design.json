@@ -47,7 +47,8 @@
           "#34c76a",
           "#7ade9f",
           "#c9f2d8"
-        ]
+        ],
+        "purpose": "Nur fuer die Icons der Trust-Zeile unter dem CTA. Faerbt Belege, nie Handlungen."
       },
       "papier": {
         "role": "neutral",
@@ -83,23 +84,23 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Nur die H1 im Hero. Kursiv gesetzte Teilphrasen in Stempelorange sind das erlaubte Ausdrucksmittel."
+        "purpose": "Nur die H1 im Hero, Source Serif 4. Kursive Teilphrasen in Stempelorange sind das Ausdrucksmittel."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Sektions-H2, zentriert."
+        "purpose": "Sektions-H2 in Source Serif 4, zentriert."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Kartentitel und H3/H4 in Bebas-Versalien. Maximal 26 Zeichen, keine Kommas."
+        "purpose": "Kartentitel und H3/H4 in Source Sans 3 600, Versalien. Max. 26 Zeichen, max. zwei Zeilen. Der Haupt-CTA nutzt als einziges Element 700."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Fließtext, Lesespalte auf 780px begrenzt."
+        "purpose": "Fliesstext in Source Sans 3 (Variable 400-600), Lesespalte 780px."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Der Kicker über jeder Sektion, Laufweite 0.2em, in Stempelorange."
+        "purpose": "Kicker in Source Sans 3 600, Laufweite 0.2em, Stempelorange."
       }
     },
     "shadows": [
@@ -164,9 +165,9 @@
       "name": "Primär-Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Der einzige Signalton der Seite, mit der gekappten Ecke als Signatur.",
-      "html": "<a href=\"#kontakt\" class=\"ds-btn-primary\">Fahrzeug jetzt bewerten lassen</a>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font-family: 'Bebas Neue', 'Arial Narrow', Impact, sans-serif; font-weight: 400; font-size: 1.05rem; text-transform: uppercase; letter-spacing: .06em; text-decoration: none; background: #f3580a; color: #fff; padding: .9rem 2.2rem; border: none; border-radius: 0; cursor: pointer; clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%); transition: all .2s cubic-bezier(.16,1,.3,1); } .ds-btn-primary:hover { background: #d4440a; transform: translateY(-1px); box-shadow: 0 8px 30px rgba(243,88,10,.25); } .ds-btn-primary:focus-visible { outline: 2px solid #0d2137; outline-offset: 3px; } .ds-btn-primary:active { transform: translateY(0); }"
+      "description": "Der einzige Signalton der Seite. Gekappte Ecke als Signatur, Tiefe ueber drop-shadow (clip-path wuerde box-shadow wegschneiden), Gewicht 700 als einziges Element der Seite.",
+      "html": "<a href=\"#kontakt\" class=\"ds-btn-primary\">Jetzt Angebot erhalten</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 1.05rem; text-transform: uppercase; letter-spacing: .07em; text-decoration: none; background: #f3580a; color: #fff; padding: .9rem 2.2rem; border: none; border-radius: 0; cursor: pointer; clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%); filter: drop-shadow(0 2px 0 rgba(13,33,55,.30)) drop-shadow(0 5px 12px rgba(13,33,55,.16)); transition: filter .2s cubic-bezier(.16,1,.3,1), background .2s cubic-bezier(.16,1,.3,1), transform .2s cubic-bezier(.16,1,.3,1); } .ds-btn-primary:hover { background: #d4440a; transform: translateY(-2px); filter: drop-shadow(0 4px 0 rgba(13,33,55,.34)) drop-shadow(0 12px 22px rgba(13,33,55,.24)); } .ds-btn-primary:active { transform: translateY(2px) scale(.99); filter: drop-shadow(0 0 0 rgba(13,33,55,.3)) drop-shadow(0 2px 5px rgba(13,33,55,.22)); } .ds-btn-primary:focus-visible { outline: none; box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 4px #d4440a; }"
     },
     {
       "name": "Sekundär-Button",
@@ -174,7 +175,7 @@
       "refersTo": "button-secondary",
       "description": "Zurückhaltende Alternative: Haarlinie statt Fläche.",
       "html": "<a href=\"tel:+4915510117300\" class=\"ds-btn-secondary\">Anrufen</a>",
-      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font-family: 'Bebas Neue', 'Arial Narrow', Impact, sans-serif; font-size: 1.05rem; text-transform: uppercase; letter-spacing: .06em; text-decoration: none; background: transparent; color: #0d2137; padding: .9rem 2.2rem; border: 1px solid #dcd9d3; border-radius: 2px; transition: all .2s cubic-bezier(.16,1,.3,1); } .ds-btn-secondary:hover { border-color: #f3580a; color: #f3580a; } .ds-btn-secondary:focus-visible { outline: 2px solid #f3580a; outline-offset: 2px; }"
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font-family: 'Source Sans 3', sans-serif; font-size: 1.05rem; text-transform: uppercase; letter-spacing: .06em; text-decoration: none; background: transparent; color: #0d2137; padding: .9rem 2.2rem; border: 1px solid #dcd9d3; border-radius: 2px; transition: all .2s cubic-bezier(.16,1,.3,1); } .ds-btn-secondary:hover { border-color: #f3580a; color: #f3580a; } .ds-btn-secondary:focus-visible { outline: 2px solid #f3580a; outline-offset: 2px; }"
     },
     {
       "name": "Vorteils-Karte",
@@ -182,7 +183,7 @@
       "refersTo": "card",
       "description": "Icon, Versalien-Titel, fetter Lead-Satz plus Erläuterung. Flach im Ruhezustand.",
       "html": "<div class=\"ds-card\"><div class=\"ds-card__icon\"><svg width=\"36\" height=\"36\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2\"/><path d=\"M15 18H9\"/><path d=\"M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14\"/><circle cx=\"17\" cy=\"18\" r=\"2\"/><circle cx=\"7\" cy=\"18\" r=\"2\"/></svg></div><h3 class=\"ds-card__title\">Abholung auch bei Defekt</h3><p class=\"ds-card__text\"><strong>Wir kommen mit dem Tieflader.</strong> Die Abholung ist deutschlandweit und für Sie kostenlos.</p></div>",
-      "css": ".ds-card { background: #fff; padding: 2.5rem 2rem; border-radius: 2px; transition: background .25s cubic-bezier(.16,1,.3,1), transform .25s cubic-bezier(.16,1,.3,1); } .ds-card:hover { transform: translateY(-2px); box-shadow: 0 2px 16px rgba(0,0,0,.06); } .ds-card__icon { color: #f3580a; margin-bottom: 1rem; } .ds-card__title { font-family: 'Bebas Neue', 'Arial Narrow', Impact, sans-serif; font-weight: 400; font-size: 1.3rem; letter-spacing: .04em; line-height: 1.1; text-transform: uppercase; color: #0d2137; margin: 0 0 .6rem; } .ds-card__text { font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; font-size: 1rem; line-height: 1.6; color: #374151; margin: 0; } .ds-card__text strong { display: block; color: #0d2137; font-weight: 600; margin-bottom: .25rem; }"
+      "css": ".ds-card { background: #fff; padding: 2.5rem 2rem; border-radius: 2px; transition: background .25s cubic-bezier(.16,1,.3,1), transform .25s cubic-bezier(.16,1,.3,1); } .ds-card:hover { transform: translateY(-2px); box-shadow: 0 2px 16px rgba(0,0,0,.06); } .ds-card__icon { color: #f3580a; margin-bottom: 1rem; } .ds-card__title { font-family: 'Source Sans 3', sans-serif; font-weight: 400; font-size: 1.3rem; letter-spacing: .04em; line-height: 1.1; text-transform: uppercase; color: #0d2137; margin: 0 0 .6rem; } .ds-card__text { font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif; font-size: 1rem; line-height: 1.6; color: #374151; margin: 0; } .ds-card__text strong { display: block; color: #0d2137; font-weight: 600; margin-bottom: .25rem; }"
     },
     {
       "name": "Formularfeld",
@@ -190,7 +191,7 @@
       "refersTo": "input",
       "description": "Papier-Füllung mit Haarlinie; Fokus schaltet auf Stempelorange.",
       "html": "<label class=\"ds-field\"><span class=\"ds-field__label\">Marke &amp; Modell</span><input class=\"ds-field__input\" type=\"text\" placeholder=\"z. B. MAN TGX 18.440\"></label>",
-      "css": ".ds-field { display: block; } .ds-field__label { display: block; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; font-size: .82rem; font-weight: 600; color: #0d2137; margin-bottom: .35rem; } .ds-field__input { width: 100%; padding: .8rem 1rem; border: 1px solid #dcd9d3; border-radius: 2px; background: #faf8f5; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; font-size: .92rem; color: #374151; transition: border-color .2s cubic-bezier(.16,1,.3,1), box-shadow .2s cubic-bezier(.16,1,.3,1); } .ds-field__input::placeholder { color: #5b626e; } .ds-field__input:focus { outline: none; border-color: #f3580a; box-shadow: 0 0 0 3px rgba(243,88,10,.08); }"
+      "css": ".ds-field { display: block; } .ds-field__label { display: block; font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif; font-size: .82rem; font-weight: 600; color: #0d2137; margin-bottom: .35rem; } .ds-field__input { width: 100%; padding: .8rem 1rem; border: 1px solid #dcd9d3; border-radius: 2px; background: #faf8f5; font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif; font-size: .92rem; color: #374151; transition: border-color .2s cubic-bezier(.16,1,.3,1), box-shadow .2s cubic-bezier(.16,1,.3,1); } .ds-field__input::placeholder { color: #5b626e; } .ds-field__input:focus { outline: none; border-color: #f3580a; box-shadow: 0 0 0 3px rgba(243,88,10,.08); }"
     },
     {
       "name": "Kicker",
@@ -198,7 +199,7 @@
       "refersTo": "eyebrow",
       "description": "Signatur-Element: eröffnet jede Sektion und ersetzt die Rahmung.",
       "html": "<span class=\"ds-eyebrow\">Ihre Vorteile</span>",
-      "css": ".ds-eyebrow { display: block; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; font-size: .78rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #f3580a; margin-bottom: .85rem; }"
+      "css": ".ds-eyebrow { display: block; font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif; font-size: .78rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #f3580a; margin-bottom: .85rem; }"
     },
     {
       "name": "Navigation",
@@ -206,7 +207,7 @@
       "refersTo": "nav",
       "description": "Fixiert; ab 60px Scroll mit Papier-Hintergrund und unterer Haarlinie.",
       "html": "<nav class=\"ds-nav\"><span class=\"ds-nav__brand\">FZAnkauf</span><a class=\"ds-nav__link\" href=\"#vorteile\">Vorteile</a><a class=\"ds-nav__link\" href=\"#ablauf\">Ablauf</a><a class=\"ds-nav__cta\" href=\"#kontakt\">Fahrzeug bewerten</a></nav>",
-      "css": ".ds-nav { display: flex; align-items: center; gap: 1.5rem; padding: .75rem 1.25rem; background: #faf8f5; border-bottom: 1px solid #dcd9d3; } .ds-nav__brand { font-family: 'Bebas Neue', 'Arial Narrow', Impact, sans-serif; font-size: 1.2rem; letter-spacing: .04em; color: #0d2137; margin-right: auto; } .ds-nav__link { font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; font-size: .95rem; color: #374151; text-decoration: none; transition: color .2s cubic-bezier(.16,1,.3,1); } .ds-nav__link:hover { color: #f3580a; } .ds-nav__cta { font-family: 'Bebas Neue', 'Arial Narrow', Impact, sans-serif; font-size: .95rem; text-transform: uppercase; letter-spacing: .06em; text-decoration: none; color: #f3580a; border: 1px solid #f3580a; border-radius: 2px; padding: .45rem 1rem; transition: all .2s cubic-bezier(.16,1,.3,1); } .ds-nav__cta:hover { background: #f3580a; color: #fff; }"
+      "css": ".ds-nav { display: flex; align-items: center; gap: 1.5rem; padding: .75rem 1.25rem; background: #faf8f5; border-bottom: 1px solid #dcd9d3; } .ds-nav__brand { font-family: 'Source Sans 3', sans-serif; font-size: 1.2rem; letter-spacing: .04em; color: #0d2137; margin-right: auto; } .ds-nav__link { font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif; font-size: .95rem; color: #374151; text-decoration: none; transition: color .2s cubic-bezier(.16,1,.3,1); } .ds-nav__link:hover { color: #f3580a; } .ds-nav__cta { font-family: 'Source Sans 3', sans-serif; font-size: .95rem; text-transform: uppercase; letter-spacing: .06em; text-decoration: none; color: #f3580a; border: 1px solid #f3580a; border-radius: 2px; padding: .45rem 1rem; transition: all .2s cubic-bezier(.16,1,.3,1); } .ds-nav__cta:hover { background: #f3580a; color: #fff; }"
     }
   ],
   "narrative": {
@@ -233,12 +234,12 @@
       },
       {
         "name": "Die Rollentrennungs-Regel",
-        "body": "Serife spricht, Versalie beschriftet. Lora traegt H1 und H2 - die Saetze, die ueberzeugen sollen. Bebas traegt Buttons, Kartentitel und Kicker und wird nie zu Fliesstext oder Hero-Headline. Geprueft und verworfen (2026-07-25): eine Bebas-gefuehrte Hero-Ueberschrift wurde gebaut, gemessen und verworfen.",
+        "body": "Serife spricht, Versalie beschriftet. Source Serif traegt H1 und H2; Source Sans in Versalien traegt Buttons, Kartentitel und Nav und wird nie zu Fliesstext oder Hero-Headline.",
         "section": "typography"
       },
       {
-        "name": "Die 26-Zeichen-Regel",
-        "body": "Kartentitel erscheinen in Versalien und dürfen 26 Zeichen nicht überschreiten — darüber brechen sie in der schmalsten Spalte (227px) auf zwei Zeilen und stehen unruhig neben einzeiligen Nachbarn.",
+        "name": "Die Zwei-Zeilen-Regel fuer Kartentitel",
+        "body": "Kartentitel in Versalien duerfen 26 Zeichen nicht ueberschreiten. Bei Source Sans 3 in Versalien tragen rund 18 Zeichen pro Zeile in der 227px-Spalte; laengere Titel laufen zweizeilig, das Raster gleicht die Hoehen an. Drei Zeilen nicht.",
         "section": "typography"
       },
       {
@@ -250,10 +251,20 @@
         "name": "Die Flach-im-Ruhezustand-Regel",
         "body": "Eine Fläche wirft erst dann einen Schatten, wenn der Nutzer sie berührt, überfährt oder fokussiert. Wer einen Ruhe-Schatten setzt, muss begründen, warum die Farbton-Schichtung nicht reicht.",
         "section": "elevation"
+      },
+      {
+        "name": "Die Sprechende-Icons-Regel",
+        "body": "Im Hero traegt jede Aussage ein Icon, das ihren Inhalt zeigt - nie ein generisches Haekchen. Dieselbe Aussage bekommt seitenweit dasselbe Motiv. Chips und Trust-Zeile laufen in der Headline-Schrift, weil sie Aussagen sind und keine Beschriftungen.",
+        "section": "components"
+      },
+      {
+        "name": "Die Sichtbarer-Fokus-Regel",
+        "body": "Jedes anklickbare Element traegt einen Fokus-Ring in Stempelorange (:focus-visible, 2px, 3px Abstand). Wo clip-path im Spiel ist, liegt der Ring innen. Kein Element verlaesst sich auf das Browser-Standard-Outline.",
+        "section": "components"
       }
     ],
     "dos": [
-      "Do Ueberschriften in Lora setzen und Beschriftungen in Bebas - die Rollentrennung ist das tragende Mittel.",
+      "Do Ueberschriften in Source Serif setzen und Beschriftungen in Source-Sans-Versalien.",
       "Do Versalien-Titel bei 26 Zeichen kappen und ohne Komma formulieren.",
       "Do Tiefe über die drei Papierschichten aufbauen, bevor du zu einem Schatten greifst.",
       "Do Stempelorange wie einen Stempel setzen: einmal pro Blickfeld, dort wo gehandelt wird.",
@@ -267,7 +278,11 @@
       "Don't Karten im Ruhezustand schweben lassen.",
       "Don't Superlative, Ausrufezeichen oder Garantie-Versprechen in Überschriften setzen.",
       "Don't Dark Mode oder Lila-Gradienten einführen; beides ist ausdrückliche Anti-Referenz.",
-      "Don't Bebas fuer Fliesstext oder Hero-Headlines einsetzen."
+      "Don't Source-Sans-Versalien fuer Fliesstext oder Hero-Headlines einsetzen.",
+      "Don't generische Haekchen als Icon verwenden, wo ein sprechendes Motiv moeglich ist.",
+      "Don't Schriften per CDN einbinden - alle Schnitte liegen selbst gehostet in assets/fonts/.",
+      "Don't box-shadow auf Elementen mit clip-path erwarten - er wird weggeschnitten; filter: drop-shadow() nehmen.",
+      "Don't transition: all verwenden; es interpoliert auch font-weight und laesst Elemente auf dem Startwert haengen."
     ]
   }
 }

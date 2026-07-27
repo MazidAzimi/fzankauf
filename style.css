@@ -1,7 +1,9 @@
 /* ============================================================
-   LKW EXPRESS 24 – Industrial Heritage Design System
+   fzankauf.de – Industrial Heritage Design System
    Ästhetik: Hell, Marineblau, Orange-Akzent, Technische Präzision
-   Fonts: Bebas Neue (Display) + IBM Plex Sans (Body)
+   Fonts: Source als Superfamily (Adobe) – Source Serif 4 (Überschriften),
+          Source Sans 3 (Fließtext und Versalien), Source Code Pro (Hinweis).
+          Alle Schnitte selbst gehostet in assets/fonts/.
    ============================================================ */
 
 /* ---------- Custom Properties ---------- */
@@ -35,11 +37,13 @@
   --white: #ffffff;            /* Echtes Weiß */
   --green: #16a34a;            /* Trust-Akzent */
 
-  /* Typography */
-  --font-display: 'Bebas Neue', 'Arial Narrow', 'Franklin Gothic Medium', 'Impact', sans-serif;
-  --font-heading: 'Lora', Georgia, 'Times New Roman', serif;
-  --font-body: 'IBM Plex Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
-  --font-mono: 'IBM Plex Mono', 'Cascadia Code', 'Fira Code', monospace;
+  /* Typography — Source als Superfamily (Adobe), alle Schnitte selbst gehostet.
+     Source hat keinen Condensed-Schnitt: die Versalien laufen daher im
+     normalbreiten Sans, nur mit hoeherem Gewicht und etwas Laufweite. */
+  --font-display: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+  --font-heading: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Source Code Pro', 'Cascadia Code', 'Fira Code', monospace;
 
   /* Spacing */
   --section-gap: clamp(4rem, 10vw, 7rem);
@@ -91,6 +95,19 @@ body {
   padding: 0 1.5rem;
 }
 
+/* ---------- Tastatur-Fokus ----------
+   Grundregel fuer alles Anklickbare. Steht bewusst frueh im Blatt, damit
+   Sonderfaelle sie ueberschreiben koennen: der Haupt-CTA traegt wegen seines
+   clip-path einen innen liegenden Ring, die Formularfelder haben ihre eigene
+   Fokus-Behandlung. :focus-visible statt :focus, damit Mausklicks keinen
+   Ring hinterlassen. */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--safety);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
 /* ---------- Typography ---------- */
 h1, h2, .section-title, .hero__title {
   font-family: var(--font-heading);
@@ -104,7 +121,7 @@ h1, h2, .section-title, .hero__title {
 /* Kachel-/Karten-Titel zurück auf die ursprüngliche Display-Schrift */
 h3, h4 {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0.03em;
   line-height: 1.1;
   text-transform: uppercase;
@@ -179,34 +196,78 @@ h3, h4 {
   justify-content: center;
   gap: 0.5rem;
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   cursor: pointer;
-  transition: all 0.2s var(--ease-out);
+  /* Bewusst nur die Eigenschaften, die animieren sollen. Frueher `all`:
+     das interpolierte auch font-weight und liess den Button auf 400 haengen,
+     obwohl die Regel 600 vorgibt. */
+  transition: background 0.2s var(--ease-out), color 0.2s var(--ease-out),
+              border-color 0.2s var(--ease-out), transform 0.2s var(--ease-out),
+              box-shadow 0.2s var(--ease-out);
   border: none;
   position: relative;
   overflow: hidden;
 }
 
+/* Der Haupt-CTA ist ein gestanztes Blechschild, kein Rechteck mit Farbe.
+   Wichtig: clip-path beschneidet auch den box-shadow — der frueher gesetzte
+   Hover-Schatten war deshalb nie sichtbar. Tiefe kommt hier ueber
+   filter: drop-shadow(), das der geschnittenen Silhouette folgt.
+   Erster Schatten ohne Weichzeichnung = Materialstaerke (die Kante des
+   Blechs), zweiter mit Streuung = Schattenwurf auf dem Papier. */
 .btn--primary {
   background: var(--safety);
   color: var(--white);
   padding: 0.9rem 2.2rem;
   font-size: 1.05rem;
+  /* Kraeftiger als die uebrigen Versalien-Elemente (600): der Haupt-CTA ist
+     das lauteste Element der Seite und darf das auch im Strich zeigen. */
+  font-weight: 700;
+  letter-spacing: 0.07em;
   clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+  filter:
+    drop-shadow(0 2px 0 rgba(13, 33, 55, 0.30))
+    drop-shadow(0 5px 12px rgba(13, 33, 55, 0.16));
+  transition: filter 0.2s var(--ease-out), background 0.2s var(--ease-out),
+              transform 0.2s var(--ease-out);
 }
 .btn--primary:hover {
   background: var(--safety-dark);
   color: var(--white);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 30px rgba(243, 88, 10, 0.25);
+  /* Hebt ab: Materialstaerke waechst, der Wurf wird weiter und weicher. */
+  transform: translateY(-2px);
+  filter:
+    drop-shadow(0 4px 0 rgba(13, 33, 55, 0.34))
+    drop-shadow(0 12px 22px rgba(13, 33, 55, 0.24));
+}
+/* Tastatur-Fokus: ein aussen liegendes outline wuerde vom clip-path
+   weggeschnitten, genau wie der box-shadow. Der Ring liegt deshalb innen —
+   eine eingestanzte Keyline, passend zum Blechschild-Motiv. */
+.btn--primary:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 0 0 2px var(--white),
+    inset 0 0 0 4px var(--safety-dark);
 }
 
 .btn--large {
   padding: 1.2rem 3.2rem;
   font-size: 1.3rem;
+}
+/* Auf kleinen Geraeten ist 1.3rem zu gross fuer die verfuegbare Breite:
+   im Formular (239px) braucht der Text sonst mehr Platz als der Button hat
+   und bricht auf zwei Zeilen. */
+@media (max-width: 480px) {
+  .btn--large {
+    padding: 1.05rem 1.6rem;
+    font-size: 1rem;
+    /* Bei kleiner Schrift kostet weite Laufweite spuerbar Breite, ohne
+       optisch viel beizutragen — knapper gesetzt bleibt es einzeilig. */
+    letter-spacing: 0.04em;
+  }
 }
 
 .btn--small {
@@ -224,6 +285,12 @@ h3, h4 {
 .btn--full {
   width: 100%;
   text-align: center;
+  /* Die Breite kommt vom Container — die 3.2rem Seitenpolsterung aus
+     .btn--large sind hier nur noch Platzfresser. Im schmalen Formular
+     blieben davon 136px von 239px fuer den Text uebrig. 0.75rem reicht
+     auch bei 360px Geraetebreite noch fuer eine Zeile. */
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 /* ---------- NAVIGATION ---------- */
@@ -257,7 +324,7 @@ h3, h4 {
   gap: 0.55rem;
   font-family: var(--font-display);
   font-size: 1.6rem;
-  font-weight: 400;
+  font-weight: 600;
   text-decoration: none;
   color: var(--heading);
   letter-spacing: 0.03em;
@@ -277,6 +344,7 @@ h3, h4 {
   align-items: center;
   gap: 0.4rem;
   font-family: var(--font-display);
+  font-weight: 600;
   font-size: 1.05rem;
   letter-spacing: 0.03em;
   color: var(--safety);
@@ -447,19 +515,22 @@ h3, h4 {
 .hero__feature {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
+  gap: 0.55rem;
+  /* Headline-Schrift wie H1/H2: die Chips sind Aussagen, keine Beschriftungen */
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
   font-weight: 600;
+  letter-spacing: -0.005em;
   color: var(--heading);
   background: rgba(243, 88, 10, 0.06);
   padding: 0.45rem 1rem;
   border-left: 3px solid var(--safety);
-  font-family: var(--font-body);
 }
 
 .hero__feature svg {
-  width: 14px;
-  height: 14px;
+  /* Etwas groesser als das fruehere Haekchen: die Motive tragen mehr Detail */
+  width: 17px;
+  height: 17px;
   color: var(--safety);
   flex-shrink: 0;
 }
@@ -546,11 +617,15 @@ h3, h4 {
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
-  font-size: 0.85rem;
-  color: var(--body-muted);
-  font-weight: 500;
-  font-family: var(--font-body);
-  letter-spacing: 0.03em;
+  /* Headline-Schrift wie die Chips daruber: beides sind Aussagen.
+     Bewusst kraeftiger gesetzt als frueher (war 0.9rem/500 in Gedaempft-Grau):
+     das sind die Belege, die den Familienbetrieb von einem Portal
+     unterscheiden - sie duerfen gelesen werden. */
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--heading);
+  font-weight: 600;
+  letter-spacing: 0;
 }
 .hero__trust span {
   display: flex;
@@ -558,6 +633,9 @@ h3, h4 {
   gap: 0.4rem;
 }
 .hero__trust span svg {
+  /* Ueberschreibt das width/height-Attribut im Markup (16px) */
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
   color: var(--success);
 }
@@ -613,7 +691,7 @@ h3, h4 {
   font-family: var(--font-display);
   font-size: 1.1rem;
   letter-spacing: 0.03em;
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 0.15rem;
 }
 
@@ -736,7 +814,7 @@ h3, h4 {
   letter-spacing: 0.04em;
   margin-bottom: 0.35rem;
   color: var(--heading);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .problem__card p {
@@ -976,7 +1054,7 @@ h3, h4 {
   height: 64px;
   font-family: var(--font-display);
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 600;
   color: var(--safety);
   margin-bottom: 1.5rem;
   position: relative;
@@ -1085,6 +1163,7 @@ h3, h4 {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-family: var(--font-display);
+  font-weight: 600;
 }
 
 .form__group .required {
@@ -1231,7 +1310,7 @@ h3, h4 {
   display: block;
   font-family: var(--font-display);
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 600;
   color: var(--safety);
   text-decoration: none;
   letter-spacing: 0.03em;
@@ -1383,7 +1462,7 @@ h3, h4 {
 .footer__links strong {
   color: var(--white);
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1rem;
   letter-spacing: 0.05em;
   margin-bottom: 0.3rem;
@@ -1458,9 +1537,14 @@ h3, h4 {
 .btn:active {
   transform: scale(0.97);
 }
+/* Gedrueckt: die Materialstaerke faellt auf null, das Schild sitzt auf.
+   Erst dadurch fuehlt sich der Knopf wie ein Bauteil an und nicht wie eine
+   Flaeche, die kurz kleiner wird. */
 .btn--primary:active {
-  transform: translateY(0) scale(0.97);
-  box-shadow: 0 2px 12px rgba(243, 88, 10, 0.20);
+  transform: translateY(2px) scale(0.99);
+  filter:
+    drop-shadow(0 0 0 rgba(13, 33, 55, 0.30))
+    drop-shadow(0 2px 5px rgba(13, 33, 55, 0.22));
 }
 /* Spec-Listen-Zeile: dezenter Hover, passend zu den Karten */
 .aufbau-item {
@@ -1631,6 +1715,7 @@ h3, h4 {
   .nav__links a {
     font-size: 1.3rem;
     font-family: var(--font-display);
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--white);
@@ -1765,6 +1850,7 @@ h3, h4 {
     gap: 0.4rem;
     padding: 0.85rem 0.5rem;
     font-family: var(--font-display);
+    font-weight: 600;
     font-size: 1rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -2022,6 +2108,7 @@ a.fahrzeug-card--link:hover .fahrzeug-card__more {
     color: var(--white);
     font-size: 1.3rem;
     font-family: var(--font-display);
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     justify-content: center;
@@ -2118,20 +2205,94 @@ a.fahrzeug-card--link:hover .fahrzeug-card__more {
 .fahrzeug-band__item img.fahrzeug-band__img--sm {
   height: clamp(52px, 7.4vw, 86px); /* Transporter ist am breitesten -> etwas kleiner */
 }
+/* Das Band ist jetzt Navigation: jede Kachel fuehrt auf ihre Kategorie-Seite. */
+a.fahrzeug-band__item {
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--radius);
+}
+a.fahrzeug-band__item:focus-visible {
+  outline: 2px solid var(--safety);
+  outline-offset: 4px;
+}
+/* Muss die Reveal-Regel weiter unten ueberbieten: die traegt (0,4,1) und
+   steht spaeter im Blatt. Mit .reveal--visible im Selektor kommt der Hover
+   auf (0,5,1) und gewinnt unabhaengig von der Reihenfolge. */
+.js .fahrzeug-band.reveal--visible .fahrzeug-band__item:hover img,
 .fahrzeug-band__item:hover img {
   transform: translateY(-4px);
 }
+.js .fahrzeug-band.reveal--visible .fahrzeug-band__item:hover .fahrzeug-band__img--flip,
 .fahrzeug-band__item:hover .fahrzeug-band__img--flip {
   transform: scaleX(-1) translateY(-4px);
 }
-.fahrzeug-band__item figcaption {
+.fahrzeug-band__item:hover .fahrzeug-band__label {
+  color: var(--safety);
+}
+.fahrzeug-band__item .fahrzeug-band__label,
+.fahrzeug-band__label {
   margin-top: 0.7rem;
   font-family: var(--font-display);
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 0.9rem;
   color: var(--heading);
 }
+/* ---------- Auftritt: die Positionen werden aufs Papier gestempelt ----------
+   Kein Ein-/Aufblenden wie beim Rest der Seite: jede Silhouette kommt etwas
+   zu gross und unscharf herein und faellt scharf auf ihren Platz — wie ein
+   Stempel, der aufsetzt. Von links nach rechts, so wie man eine Liste
+   abarbeitet. Gesamtdauer unter 700ms, laeuft genau einmal.
+   Ohne JS bleibt alles sichtbar; die .js-Klasse blendet erst aus. */
+.js .fahrzeug-band .fahrzeug-band__item img {
+  opacity: 0;
+  transform: scale(1.09);
+  filter: blur(3px);
+}
+.js .fahrzeug-band .fahrzeug-band__item .fahrzeug-band__img--flip {
+  transform: scaleX(-1) scale(1.09);
+}
+.js .fahrzeug-band.reveal--visible .fahrzeug-band__item img {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+  transition: opacity 0.34s var(--ease-out), transform 0.34s var(--ease-out),
+              filter 0.34s var(--ease-out);
+}
+.js .fahrzeug-band.reveal--visible .fahrzeug-band__item .fahrzeug-band__img--flip {
+  transform: scaleX(-1) scale(1);
+}
+.js .fahrzeug-band .fahrzeug-band__item .fahrzeug-band__label { opacity: 0; }
+.js .fahrzeug-band.reveal--visible .fahrzeug-band__item .fahrzeug-band__label {
+  opacity: 1;
+  transition: opacity 0.3s var(--ease-out);
+}
+
+/* Der Versatz laeuft die Reihe entlang; die Beschriftung folgt ihrem
+   Stempel um 90ms, damit erst das Bild sitzt und dann das Wort. */
+.js .fahrzeug-band.reveal--visible .fahrzeug-band__item:nth-child(1) img { transition-delay: 0ms; }
+.js .fahrzeug-band.reveal--visible .fahrzeug-band__item:nth-child(2) img { transition-delay: 65ms; }
+.js .fahrzeug-band.reveal--visible .fahrzeug-band__item:nth-child(3) img { transition-delay: 130ms; }
+.js .fahrzeug-band.reveal--visible .fahrzeug-band__item:nth-child(4) img { transition-delay: 195ms; }
+.js .fahrzeug-band.reveal--visible .fahrzeug-band__item:nth-child(5) img { transition-delay: 260ms; }
+.js .fahrzeug-band.reveal--visible .fahrzeug-band__item:nth-child(6) img { transition-delay: 325ms; }
+.js .fahrzeug-band.reveal--visible .fahrzeug-band__item:nth-child(1) .fahrzeug-band__label { transition-delay: 90ms; }
+.js .fahrzeug-band.reveal--visible .fahrzeug-band__item:nth-child(2) .fahrzeug-band__label { transition-delay: 155ms; }
+.js .fahrzeug-band.reveal--visible .fahrzeug-band__item:nth-child(3) .fahrzeug-band__label { transition-delay: 220ms; }
+.js .fahrzeug-band.reveal--visible .fahrzeug-band__item:nth-child(4) .fahrzeug-band__label { transition-delay: 285ms; }
+.js .fahrzeug-band.reveal--visible .fahrzeug-band__item:nth-child(5) .fahrzeug-band__label { transition-delay: 350ms; }
+.js .fahrzeug-band.reveal--visible .fahrzeug-band__item:nth-child(6) .fahrzeug-band__label { transition-delay: 415ms; }
+
 @media (prefers-reduced-motion: reduce) {
   .fahrzeug-band__item img { transition: none; }
+  .js .fahrzeug-band .fahrzeug-band__item img,
+  .js .fahrzeug-band .fahrzeug-band__item .fahrzeug-band__label {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+  .js .fahrzeug-band .fahrzeug-band__item .fahrzeug-band__img--flip {
+    transform: scaleX(-1);
+  }
 }

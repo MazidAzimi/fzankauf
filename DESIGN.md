@@ -1,6 +1,6 @@
 ---
 name: fzankauf.de
-description: Nutzfahrzeug-Ankauf der Euro-Truck-Handel GmbH – industrielles Hell-Layout, Serife spricht, Versalie beschriftet
+description: Nutzfahrzeug-Ankauf der Euro-Truck-Handel GmbH – industrielles Hell-Layout, Source als Superfamily (Adobe)
 colors:
   frachtbrief-marine: "#0d2137"
   stempelorange: "#f3580a"
@@ -16,31 +16,31 @@ colors:
   linie-leicht: "#eae7e2"
 typography:
   display:
-    fontFamily: "Lora, Georgia, 'Times New Roman', serif"
+    fontFamily: "'Source Serif 4', Georgia, serif"
     fontSize: "clamp(2.5rem, 6vw, 4.4rem)"
     fontWeight: 600
     lineHeight: 1.06
     letterSpacing: "-0.015em"
   headline:
-    fontFamily: "Lora, Georgia, 'Times New Roman', serif"
+    fontFamily: "'Source Serif 4', Georgia, serif"
     fontSize: "clamp(1.9rem, 4.5vw, 3.1rem)"
     fontWeight: 600
     lineHeight: 1.14
     letterSpacing: "-0.01em"
   title:
-    fontFamily: "'Bebas Neue', 'Arial Narrow', Impact, sans-serif"
+    fontFamily: "'Source Sans 3', 'Segoe UI', system-ui, sans-serif"
     fontSize: "1.3rem"
-    fontWeight: 400
+    fontWeight: 600
     lineHeight: 1.1
     letterSpacing: "0.04em"
   body:
-    fontFamily: "'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif"
+    fontFamily: "'Source Sans 3', 'Segoe UI', system-ui, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.6
     letterSpacing: "normal"
   label:
-    fontFamily: "'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif"
+    fontFamily: "'Source Sans 3', 'Segoe UI', system-ui, sans-serif"
     fontSize: "0.78rem"
     fontWeight: 600
     lineHeight: 1.4
@@ -111,7 +111,7 @@ Eine Papier-Palette mit genau einem Signalton: warme Neutraltöne tragen die Fl�
 - **Frachtbrief-Marine** (`#0d2137`): Alle Überschriften, der Footer und dunkle Flächen. Die Autoritätsfarbe des Systems — sie sagt „eingetragenes Unternehmen", nicht „Angebot".
 
 ### Tertiary
-- **Quittungsgrün** (`#16a34a`): Nur für bestätigende Häkchen in den Trust-Zeilen. Kein CTA, kein Link, keine Fläche.
+- **Quittungsgrün** (`#16a34a`): Nur für die Icons der Trust-Zeile unter dem CTA. Es färbt Belege, nie Handlungen — kein CTA, kein Link, keine Fläche.
 
 ### Neutral
 - **Papier** (`#faf8f5`): Seitenhintergrund und Formularfeld-Füllung. Warmes Off-White, nie Reinweiß.
@@ -129,26 +129,28 @@ Eine Papier-Palette mit genau einem Signalton: warme Neutraltöne tragen die Fl�
 
 ## Typography
 
-**Display Font:** Lora (Fallback: Georgia, 'Times New Roman', serif) — lokal als woff2 eingebunden
-**Body Font:** IBM Plex Sans (Fallback: 'Segoe UI', system-ui)
-**Label Font:** Bebas Neue (Fallback: 'Arial Narrow', Impact) — Versalien, erzwungen per `text-transform`
-**Mono:** IBM Plex Mono — nur für die Reassurance-Zeile unter dem CTA
+**Alle Schnitte aus einer Superfamily: Source (Adobe).** Selbst gehostet in `assets/fonts/` (202 KB, latin + latin-ext) — kein Google-CDN, schon aus Datenschutzgründen.
 
-**Character:** Eine Serife, die spricht, und eine Versalienschrift, die beschriftet. Lora gibt den Aussagen Gewicht ohne Lautstärke; Bebas gibt den Bedienelementen die industrielle Kante. Die Spannung zwischen beiden ist der Charakter des Systems — keine der beiden funktioniert hier allein.
+**Display Font:** Source Serif 4, Gewicht 600 (Fallback: Georgia, serif)
+**Body Font:** Source Sans 3 (Fallback: 'Segoe UI', system-ui) — Gewichte 400, 600 und 700
+**Label Font:** Source Sans 3, Gewicht 600 — Versalien, erzwungen per `text-transform`. Source hat **keinen Condensed-Schnitt**; die Versalien laufen deshalb normalbreit und tragen die industrielle Kante über Gewicht und Laufweite statt über schmale Formen.
+**Mono:** Source Code Pro — nur für die Reassurance-Zeile unter dem CTA
+
+**Character:** Eine Serife, die spricht, und eine Versalienschrift, die beschriftet. Source Serif gibt den Aussagen Gewicht ohne Lautstärke; Source Sans in Versalien gibt den Bedienelementen die technische Kante. Die Spannung zwischen beiden ist der Charakter des Systems — keine der beiden funktioniert hier allein.
 
 ### Hierarchy
-- **Display** (Lora, 600, `clamp(2.5rem, 6vw, 4.4rem)`, LH 1.06): Nur die H1 im Hero. Kursiv gesetzte Teilphrasen in Stempelorange sind das erlaubte Ausdrucksmittel.
-- **Headline** (Lora, 600, `clamp(1.9rem, 4.5vw, 3.1rem)`, LH 1.14): Sektions-H2, zentriert.
-- **Title** (Bebas Neue, 400, `1.3rem`, LS 0.04em, VERSALIEN): Kartentitel, H3, H4.
-- **Body** (IBM Plex Sans, 400, `1rem`, LH 1.6): Fließtext. Lesespalte über `--content-narrow` (780px) begrenzt.
-- **Label** (IBM Plex Sans, 600, `0.78rem`, LS 0.2em, VERSALIEN, Stempelorange): Der Kicker über jeder Sektion.
+- **Display** (Source Serif 4, 600, `clamp(2.5rem, 6vw, 4.4rem)`, LH 1.06): Nur die H1 im Hero. Kursiv gesetzte Teilphrasen in Stempelorange sind das erlaubte Ausdrucksmittel.
+- **Headline** (Source Serif 4, 600, `clamp(1.9rem, 4.5vw, 3.1rem)`, LH 1.14): Sektions-H2, zentriert.
+- **Title** (Source Sans 3, 600, `1.3rem`, LS 0.04em, VERSALIEN): Kartentitel, H3, H4.
+- **Body** (Source Sans 3, 400, `1rem`, LH 1.6): Fließtext. Lesespalte über `--content-narrow` (780px) begrenzt.
+- **Label** (Source Sans 3, 600, `0.78rem`, LS 0.2em, VERSALIEN, Stempelorange): Der Kicker über jeder Sektion.
 
 ### Named Rules
-**Die Rollentrennungs-Regel.** Serife spricht, Versalie beschriftet. Lora trägt H1 und H2 — die Sätze, die überzeugen sollen. Bebas trägt Buttons, Kartentitel und Kicker und wird nie zu Fließtext oder Hero-Headline.
+**Die Rollentrennungs-Regel.** Serife spricht, Versalie beschriftet. Source Serif trägt H1 und H2 — die Sätze, die überzeugen sollen. Source Sans in Versalien trägt Buttons, Kartentitel und Nav und wird nie zu Fließtext oder Hero-Headline.
 
-*Geprüft und verworfen (2026-07-25):* Eine Bebas-geführte Hero-Überschrift wurde gebaut und gemessen — einzeilig in Versalien (Titel wächst um ~100px, bricht auf drei Zeilen) und zweizeilig mit Lora-Kursiv-Versprechen (mobil kompakter, 116px statt 170px). Beide wurden verworfen: die Serifen-Überschrift trägt die Marke besser. Nicht erneut vorschlagen ohne neuen Anlass.
+*Geprüft und verworfen (2026-07-25):* Eine versalien-geführte Hero-Überschrift wurde gebaut und gemessen — einzeilig in Versalien (Titel wächst um ~100px, bricht auf drei Zeilen) und zweizeilig mit Lora-Kursiv-Versprechen (mobil kompakter, 116px statt 170px). Beide wurden verworfen: die Serifen-Überschrift trägt die Marke besser. Nicht erneut vorschlagen ohne neuen Anlass.
 
-**Die 26-Zeichen-Regel.** Kartentitel erscheinen in Versalien und dürfen 26 Zeichen nicht überschreiten — darüber brechen sie in der schmalsten Spalte (227px) auf zwei Zeilen und stehen unruhig neben einzeiligen Nachbarn. Gemessen, nicht geschätzt: 40 Zeichen ergeben zwei Zeilen, 44 Zeichen drei.
+**Die Zwei-Zeilen-Regel für Kartentitel.** Kartentitel erscheinen in Versalien und dürfen **26 Zeichen** nicht überschreiten. In der schmalsten Spalte (227 px) trägt ein Titel bei Source Sans 3 in Versalien rund 17 Zeichen pro Zeile — längere Titel laufen zweizeilig, und das ist in Ordnung: das Raster gleicht die Kartenhöhen an (gemessene Abweichung ≤ 23 px). Drei Zeilen sind es nicht. Gemessen bei 1,3 rem: 26 Zeichen brauchen 316 px, ab etwa 34 Zeichen entstünde eine dritte Zeile. *(Die frühere Fassung verlangte eine Zeile — das galt für Bebas Neue, das deutlich schmaler baut.)*
 
 **Die Keine-Kommas-Regel.** Versalien-Überschriften enthalten keine Kommas und keine Verbsätze. `ROST MINDERT DEN PREIS, NICHT DIE CHANCE` ist Geschrei; `AUCH MIT ROST` ist eine Beschriftung.
 
@@ -173,6 +175,8 @@ Das System ist **flach im Ruhezustand**. Tiefe entsteht durch Farbton-Schichtung
 - **Fokus-Ring** (`0 0 0 3px rgba(243,88,10,0.08)`): Formularfelder im Fokus, zusammen mit orangem Rand.
 
 ### Named Rules
+**Die Sichtbarer-Fokus-Regel.** Jedes anklickbare Element trägt einen Fokus-Ring in Stempelorange (`:focus-visible`, 2px, 3px Abstand). Wo `clip-path` im Spiel ist, liegt der Ring innen — außen würde er weggeschnitten. Kein Element verlässt sich auf das Browser-Standard-Outline.
+
 **Die Flach-im-Ruhezustand-Regel.** Eine Fläche wirft erst dann einen Schatten, wenn der Nutzer sie berührt, überfährt oder fokussiert. Wer einen Ruhe-Schatten setzt, muss begründen, warum die Farbton-Schichtung nicht reicht.
 
 ## Shapes
@@ -188,8 +192,11 @@ Ränder sind Haarlinien (1px) in `Linie`. Akzentränder verwenden `1px solid rgb
 ### Buttons
 - **Character:** Werkzeug statt Interface — harte Kanten, klare Zustände, kein Schnickschnack.
 - **Shape:** Kein Radius; stattdessen die gekappte Ecke (8px-Schräge links oben, rechts unten).
-- **Primary:** Stempelorange auf Weiß, Bebas Neue in Versalien, Laufweite 0.06em, Polsterung `0.9rem 2.2rem`.
-- **Hover:** Stempelorange Tief, `translateY(-1px)`, Orange-Abdruck-Schatten. Aktiv: kurzes Einsinken.
+- **Primary:** Stempelorange auf Weiß, Source Sans 3 in **Gewicht 700** — als einziges Element der Seite; alle übrigen Versalien laufen auf 600. Laufweite 0.07em, unter 480px auf 0.04em zurückgenommen.
+- **Tiefe:** `clip-path` beschneidet `box-shadow` — Tiefe kommt deshalb über `filter: drop-shadow()`, das der geschnittenen Silhouette folgt. Zwei Schatten mit verschiedenen Aufgaben: der erste ohne Weichzeichnung ist die Materialstärke des Blechs, der zweite mit Streuung der Wurf aufs Papier.
+- **Zustände:** Ruhe 2px Stärke / 5–12px Wurf · Hover 4px / 12–22px und 2px angehoben · Gedrückt Stärke auf 0, 2px abgesenkt — das Schild sitzt auf.
+- **Fokus:** ein außen liegendes `outline` würde ebenfalls weggeschnitten; der Ring liegt deshalb innen (`inset`, weiß mit dunkelorangem Rand).
+- **Vollbreite (`btn--full`):** schmale Seitenpolsterung (0.75rem) — die Breite kommt vom Container, die 3.2rem aus `btn--large` wären dort nur Platzfresser.
 - **Secondary:** Transparent mit Haarlinie, Text in Marine.
 
 ### Cards / Containers
@@ -199,22 +206,35 @@ Ränder sind Haarlinien (1px) in `Linie`. Akzentränder verwenden `1px solid rgb
 - **Aufbau:** Icon (36×36, Strichstärke 2, `currentColor`) → H3 in Versalien → Absatz mit fettem Lead-Satz und anschließender Erläuterung.
 
 ### Inputs / Fields
-- **Style:** Papier-Füllung, 1px Haarlinie, 2px Radius, Polsterung `0.8rem 1rem`, IBM Plex Sans 0.92rem.
+- **Style:** Papier-Füllung, 1px Haarlinie, 2px Radius, Polsterung `0.8rem 1rem`, Source Sans 3 0.92rem.
 - **Focus:** Rand wechselt auf Stempelorange, dazu der 3px-Fokus-Ring bei 8% Deckung. Kein Browser-Outline.
 
 ### Navigation
 - **Style:** Fixiert, transparent über dem Hero, ab 60px Scroll mit Papier-Hintergrund und unterer Haarlinie.
-- **Links:** IBM Plex Sans, Hover in Stempelorange.
+- **Links:** Source Sans 3, Hover in Stempelorange.
 - **Dropdown:** Weiße Fläche, 2px Radius, Gehoben-Schatten, geöffnet über `.open` (Klick) oder `:hover`. Escape und Außenklick schließen.
-- **Mobil (≤600px):** Vollflächiges Marine-Overlay, Einträge in Bebas-Versalien zentriert, Untermenü klappt per `max-height` auf.
+- **Mobil (≤600px):** Vollflächiges Marine-Overlay, Einträge in Source-Sans-Versalien zentriert, Untermenü klappt per `max-height` auf.
+
+### Signature: Sprechende Icons statt Häkchen
+Im Hero trägt jede Aussage ein Icon, das ihren Inhalt zeigt — nie ein generisches Häkchen. Die Chips über dem CTA: Ortsnadel für „Besichtigung vor Ort", LKW für „Abholung", Uhr für „Angebot in 24h", Karte für „Sofortzahlung". Die Trust-Zeile darunter: Person für den Inhaber, Haus für den Familienbetrieb, Aufwärtspfeil für die wachsende Zahl angekaufter Fahrzeuge.
+
+Dieselbe Aussage bekommt seitenweit dasselbe Motiv — der LKW in einem Chip ist derselbe wie in der Abholungs-Karte der Vorteile. Chips und Trust-Zeile laufen beide in der Headline-Schrift (Source Serif), weil sie Aussagen sind und keine Beschriftungen; Source Sans in Versalien bleibt Buttons und Kartentiteln vorbehalten.
+
+Die Trust-Zeile ist bewusst kräftig gesetzt (0,95rem, Gewicht 600, Frachtbrief-Marine statt gedämpftem Grau): sie trägt die Belege, die den Familienbetrieb von einem Portal unterscheiden. Nur ihre Icons bleiben Quittungsgrün — Belege, keine Handlung.
 
 ### Signature: Der Kicker
 Über jeder Sektion steht ein Wort in Versalien, 0.78rem, Laufweite 0.2em, in Stempelorange. Er ersetzt die Rahmung — die Sektion braucht keine Box, weil der Kicker sie eröffnet. *(Ausnahme: `/lkw-ankauf/` verzichtet bewusst darauf, nachdem eine Design-Kritik die Wiederholung über fünf Sektionen bemängelt hat. Die übrigen Seiten tragen ihn noch — eine offene Inkonsistenz.)*
 
+### Signature: Das Fahrzeug-Band
+Sechs freigestellte Silhouetten unter dem Hero, jede verlinkt auf ihre Kategorie-Seite. Der Auftritt ist der eine autorisierte Bewegungsmoment der Seite: jede Silhouette kommt zu groß und unscharf herein und fällt scharf auf ihren Platz — ein Stempel, der aufsetzt. Von links nach rechts, 65 ms Versatz, die Beschriftung folgt ihrem Bild um 90 ms. Gesamtdauer unter 700 ms, läuft genau einmal. Ohne JavaScript ist alles sofort sichtbar; `prefers-reduced-motion` schaltet die Bewegung ab.
+
+### Beschriftungen der Handlungsflächen
+Drei Rollen, drei Formulierungen, keine wiederholt die andere: Navigation „Fahrzeug bewerten", Hero und Mitte „Jetzt Angebot erhalten", Formular „Bewertung anfordern". Kein Stabreim, und „kostenlos" steht nur an einer Stelle — in der Zusicherung, nicht zusätzlich im Button.
+
 ## Do's and Don'ts
 
 ### Do:
-- **Do** Überschriften in Lora setzen und Beschriftungen in Bebas — die Rollentrennung ist das tragende Mittel.
+- **Do** Überschriften in Source Serif setzen und Beschriftungen in Source-Sans-Versalien — die Rollentrennung ist das tragende Mittel.
 - **Do** Versalien-Titel bei 26 Zeichen kappen und ohne Komma formulieren.
 - **Do** Tiefe über die drei Papierschichten aufbauen, bevor du zu einem Schatten greifst.
 - **Do** Stempelorange wie einen Stempel setzen: einmal pro Blickfeld, dort wo gehandelt wird.
@@ -226,6 +246,8 @@ Ränder sind Haarlinien (1px) in `Linie`. Akzentränder verwenden `1px solid rgb
 - **Don't** Stempelorange als Flächenhintergrund für Text verwenden.
 - **Don't** eine vierte Flächenhelligkeit einführen.
 - **Don't** Karten im Ruhezustand schweben lassen.
-- **Don't** Bebas für Fließtext oder Hero-Headlines einsetzen (siehe Rollentrennungs-Regel).
+- **Don't** die Versalien-Auszeichnung für Fließtext oder Hero-Headlines einsetzen (siehe Rollentrennungs-Regel).
 - **Don't** Superlative, Ausrufezeichen oder Garantie-Versprechen in Überschriften setzen — dorthin gehören Fakten.
 - **Don't** Dark Mode oder Lila-Gradienten einführen; beides ist ausdrückliche Anti-Referenz.
+- **Don't** `box-shadow` auf Elementen mit `clip-path` erwarten — er wird weggeschnitten; `filter: drop-shadow()` nehmen.
+- **Don't** `transition: all` verwenden; es interpoliert auch `font-weight` und lässt Elemente auf dem Startwert hängen.
