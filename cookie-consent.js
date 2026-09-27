@@ -70,7 +70,7 @@
         '<p class="cc-banner__text">' +
           'Wir nutzen Cookies, um diese Website bereitzustellen und ihre Reichweite zu messen. ' +
           'Notwendige Cookies sind immer aktiv. Marketing &amp; Analytics nur mit Ihrer Zustimmung. ' +
-          'Details: <a href="datenschutz.html">Datenschutzerklärung</a> | <a href="impressum.html">Impressum</a>' +
+          'Details: <a href="/datenschutz/">Datenschutzerklärung</a> | <a href="/impressum/">Impressum</a>' +
         '</p>' +
         '<div class="cc-banner__options">' +
           '<div class="cc-option">' +
